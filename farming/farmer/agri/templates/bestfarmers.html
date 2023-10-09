@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Best Farmers</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <!-- Title -->
+  <title>agrovillage</title>
+  <!-- Favicon -->
+  <link rel="icon" href="img/core-img/favicon.ico">
+  <!-- Core Stylesheet -->
+  {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div class="preloader d-flex align-items-center justify-content-center">
+    <div class="spinner"></div>
+  </div>
+<!-- header start-->
+    <header class="header-area">
+    <!-- Top Header Area -->
+    <div class="top-header-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="top-header-content d-flex align-items-center justify-content-between">
+              <!-- Top Header Content -->
+              <div class="top-header-meta">
+                <p>Welcome to <span>AgroVillage</span>, we hope you will enjoy our products and have good experience</p>
+              </div>
+              <!-- Top Header Content -->
+              <div class="top-header-meta text-right">
+                <a href="#" data-toggle="tooltip" data-placement="bottom" title="agrovillage2024@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: agrovillage2024@gmail.com</span></a>
+                <a href="#" data-toggle="tooltip" data-placement="bottom" title="9870672129"><i class="fa fa-phone" aria-hidden="true"></i> <span>Call Us:4444444</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar Area -->
+    <div class="famie-main-menu" >
+      <div class="classy-nav-container breakpoint-off">
+        <div class="container-fluid" >
+          <!-- Menu -->
+          <nav class="classy-navbar justify-content-between" id="famieNav" >
+
+            <!-- Nav Brand -->
+            <a href="{% url 'admin:login' %}?next=/admin/" class="nav-brand" style="font-size:30px; color:green;font-weight:bold;">Agro<span class="sub-color" style="color:orange">Village</span></a>
+
+            <!-- Navbar Toggler -->
+
+            <div class="classy-navbar-toggler">
+              <span class="navbarToggler"><span></span><span></span><span></span></span>
+            </div>
+            <!-- Menu -->
+            <div class="classy-menu">
+              <!-- Close Button -->
+              <div class="classycloseIcon">
+                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+              </div>
+              <!-- Navbar Start -->
+              <div class="classynav">
+                <ul>
+                  <li class="active"><a href="{% url 'home' %}" style="font-size:25px; color:green">Home</a></li>
+                  <li><a href="{% url 'about' %}" style="font-size:25px; color:green">About</a></li>
+                  <li><a href="#" style="font-size:25px; color:green">Services</a>
+                        <ul class="dropdown">
+                          <li><a href="{% url 'ourproduct' %}" style="font-size:15px;  color:green">Our Product</a></li>
+                          <li><a href="{% url 'shop' %}" style="font-size:15px ; color:green">Shop</a></li>
+                          <li><a href="{% url 'farming' %}" style="font-size:15px; color:green">Farming Practice</a></li>
+                                  <li><a href="{% url 'bestfarmers' %}" style="font-size:15px; color:green">Best Farmers</a></li>
+                        </ul>
+                      </li>
+
+                          <li><a href="{% url 'news' %}" style="font-size:25px; color:green">News</a></li>
+
+                      <li><a href="{% url 'contact' %}" style="font-size:25px; color:green">Contact</a></li>
+                   <li><a href="{% url 'logout' %}" style="font-size:25px;  color:green">Logout</a></li>
+                    </ul>
+
+                <!-- Search Icon -->
+                <div id="searchIcon">
+                  <i class="icon_search" aria-hidden="true"></i>
+                </div>
+                <!-- Cart Icon -->
+                <div id="cartIcon">
+  <a href="{% url 'cart_page' %}">
+    <i class="icon_cart_alt" aria-hidden="true"></i>
+    <span id="cart-quantity">0</span>
+  </a>
+</div>
+
+              </div>
+
+              <!-- Navbar End -->
+            </div>
+            <div id="google_translate_element"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+          <a href="{% url 'weather' %}"><img src="{% static 'img/core-img/wicon.jpg' %}" height="25px" width="40px">weather</a>
+          </nav>
+
+          <!-- Search Form -->
+          <div class="search-form">
+            <form action="#" method="get">
+              <input type="search" name="search" id="search" placeholder="Type keywords &amp; press enter...">
+              <button type="submit" class="d-none"></button>
+            </form>
+            <!-- Close Icon -->
+            <div class="closeIcon"><i class="fa fa-times" aria-hidden="true"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ##### Header Area End ##### -->
+
+  <!-- ##### Breadcrumb Area Start ##### -->
+  <div class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url('{% static "img/core-img/bestf.webp" %}');">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-12">
+          <div class="breadcrumb-text">
+            <h2>Best Farmers </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="famie-breadcrumb">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'index' %}"><i class="fa fa-home"></i> Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Best Farmers</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <!-- ##### Breadcrumb Area End ##### -->
+
+  <!-- ##### Farming Practice Area Start ##### -->
+  <section class="farming-practice-area bg-gray section-padding-100-50">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <!-- Section Heading -->
+          <div class="section-heading text-center">
+            <p>Make the green world</p>
+            <h2><span>Best Farmers</span> For the best Advice</h2>
+            <img src="{%static 'img/core-img/decor2.png' %}" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <!-- Single Farming Practice Area -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="single-farming-practice-area mb-50 wow fadeInUp" data-wow-delay="100ms">
+            <!-- Thumbnail -->
+            <div class="farming-practice-thumbnail">
+              <img src="{%static 'img/core-img/pappalamma.jpg' %}" alt="">
+            </div>
+            <!-- Content -->
+            <div class="farming-practice-content text-center">
+              <!-- Icon -->
+              <h3>Miss. Pappammal for</h3>
+              <h4>Organic Farming</h4>
+              <p style="text-align:justify;">Pappammal is an Indian organic farmer from Tamil Nadu. At the age of 105, she is argued to be the oldest farmer still active in the field. She is regarded as a pioneer in the agriculture field and is affiliated with the Tamil Nadu Agricultural University's department of education.
+              <a href="https://thewire.in/agriculture/pappammal-centenarian-woman-farmer-padma-shri-thekkampatti">Read More...</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single Farming Practice Area -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="single-farming-practice-area mb-50 wow fadeInUp" data-wow-delay="300ms">
+            <!-- Thumbnail -->
+            <div class="farming-practice-thumbnail">
+              <img src="{%static 'img/core-img/verma.png' %}" alt="">
+            </div>
+            <!-- Content -->
+            <div class="farming-practice-content text-center">
+              <!-- Icon -->
+
+              <h3>Mr. Ram Saran Verma for</h3>
+              <h4>Advance Farming</h4>
+              <p style="text-align:justify;">Ram Saran Verma is an Indian farmer who is noted for bringing advanced and more profitable farming techniques to small Indian farmers and rural villages.He introduced banana cultivation to his fields, which traditionally grew wheat, rice, sugarcane and mustard, and was one of the first farmers to introduce tissue culture farming in the state of Uttar Pradesh.
+            <a href="https://youtu.be/Efe0gzzR35Q">Read More...</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single Farming Practice Area -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="single-farming-practice-area mb-50 wow fadeInUp" data-wow-delay="500ms">
+            <!-- Thumbnail -->
+           <div class="farming-practice-thumbnail">
+  <img src="{% static 'img/core-img/kanwals.jpg' %}" alt="" style="height: 420px;">
+</div>
+
+            <!-- Content -->
+            <div class="farming-practice-content text-center">
+              <!-- Icon -->
+
+              <h3>Mr. Kanwal singh Chauhan for</h3>
+              <h4>Contributions to crop </h4>
+              <p style="text-align:justify;">Kanwal Singh Chauhan is an Indian farmer from Haryana, India. He is known for his contributions to crop diversification in the agriculture industry. e is Owner of Integrated Unit for Mushroom Development. Kanwal Singh Chauhan, father of Baby Conn of Haryana.
+              <a href="https://krishijagran.com/profiles/kanwal-singh-chauhan/">Read More...</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single Farming Practice Area -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="single-farming-practice-area mb-50 wow fadeInUp" data-wow-delay="100ms">
+            <!-- Thumbnail -->
+            <div class="farming-practice-thumbnail">
+              <img src="{%static 'img/core-img/rahibaipopere.jpg' %}" alt="" style="height: 420px;">
+            </div>
+            <!-- Content -->
+            <div class="farming-practice-content text-center">
+              <!-- Icon -->
+              <h3> Miss. Rahibai Soma Popere for</h3>
+              <h4>Preparing hyacinth beans</h4>
+              <p style="text-align:justify;">Rahibai Soma Popere, born in 1964, is an Indian farmer and conservationist. She helps other farmers return to native varieties of crops, preparing hyacinth beans for self-help groups.She has worked on farms all her life and has an extraordinary understanding of crop diversity. Rahibai Soma Popere farm land, where she grows 17 different crops.
+              Contact no. (+91) 2025709291
+                <a href="https://en.wikipedia.org/wiki/Rahibai_Soma_Popere">Read More...</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single Farming Practice Area -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="single-farming-practice-area mb-50 wow fadeInUp" data-wow-delay="300ms">
+            <!-- Thumbnail -->
+            <div class="farming-practice-thumbnail">
+              <img src="{%static 'img/core-img/papa.jpg' %}" alt="" style="height: 420px;">
+            </div>
+            <!-- Content -->
+            <div class="farming-practice-content text-center">
+              <!-- Icon -->
+              <h3>Mr. Mahendra pal singh for</h3>
+              <h4>Basic knowladge</h4>
+              <p style="text-align:justify;">Mr. Mahendra pal singh is a Successfull farmer in his life. He's  trying to improve soil quality and Agricultural produce. He also informs the other farmers of his village about good crops and higher yields. He is the famous for potatoes, rice, millet, corn and some vegetable crops. He's  belongs to Hathras District of U.P.
+              Contact no. 7830075014
+                <a href="https://www.facebook.com/mahendrapal.singh.5059">Read More</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single Farming Practice Area -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="single-farming-practice-area mb-50 wow fadeInUp" data-wow-delay="500ms">
+            <!-- Thumbnail -->
+            <div class="farming-practice-thumbnail">
+              <img src="{%static 'img/core-img/vallabh.webp' %}" alt="" style="height: 420px;">
+            </div>
+            <!-- Content -->
+            <div class="farming-practice-content text-center">
+              <!-- Icon -->
+              <h3>Vallabhbhai Marvaniya for</h3>
+              <h4>Introducing Carrots</h4>
+              <p style="text-align:justify;">He is known for introducing carrots for Gujaratis. Vallabhbhai had to leave his education after class 5 to help his father in his 5-acre farm where pulses, grains and groundnut were grown to sell,and maize, jowar, rajko (a kind of grass meant for fodder) and carrot was grown to feed the cattle. No one in Gujarat knew back then that these grains and vegetables could also be consumed by humans.
+              contact no.
+                <a href="https://www.thebetterindia.com/109895/vallabhbhai-marvaniya-madhuvan-carrot-farmer-junagadh-gujarat/">Read More...</a></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ##### Farming Practice Area End ##### -->
+
+<section class="our-products-area section-padding-100">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <!-- Section Heading -->
+          <div class="section-heading text-center">
+            <h2><span>Contact</span>With Us</h2>
+            <img src="img/core-img/decor2.png" alt="">
+          </div>
+        </div>
+      </div>
+
+    </div>
+   <div class="row">
+      <div class="col-12 col-md-4">
+          <div class="single-information-area text-center mb-100 wow fadeInUp" data-wow-delay="500ms">
+            <div class="contact-icon">
+             <a href="http://www.kvkdk.org/our_contact_farmers.html"><i class="icon_phone"></i></a>
+            </div>
+            <h5>Phone</h5>
+
+          </div>
+        </div>
+
+        <!-- Single Information Area -->
+        <div class="col-12 col-md-4">
+          <div class="single-information-area text-center mb-100 wow fadeInUp" data-wow-delay="500ms">
+            <div class="contact-icon">
+             <a href="https://www.bajajfinservmarkets.in/credit-card/kisan-credit-card-helpline-number.html"><i class="icon_phone"></i></a>
+            </div>
+            <h5>contact info</h5>
+
+          </div>
+        </div>
+        <!-- Single Information Area -->
+        <div class="col-12 col-md-4">
+          <div class="single-information-area text-center mb-100 wow fadeInUp" data-wow-delay="500ms">
+            <div class="contact-icon">
+              <a href="https://www.manage.gov.in/kcc/kcc.asp"><i class="icon_phone"></i></a>
+            </div>
+                <h5>Kisaan Call center</h5>
+          </div>
+        </div>
+   </div>
+  </section>
+  <!-- ##### Footer Area Start ##### -->
+  <footer class="footer-area">
+    <!-- Main Footer Area -->
+    <div class="main-footer bg-img bg-overlay section-padding-100-0" style="background-image: url('{% static "img/bg-img/3.jpg" %}');">
+      <div class="container">
+        <div class="row">
+
+          <!-- Single Footer Widget Area -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="footer-widget mb-80">
+              <a href="#" class="foo-logo d-block mb-30"><img src="img/core-img/logo2.png" alt=""></a>
+              <p style="font-weight:bold; font-size:15px">Feel free to reach out to us for any inquiries, advice, or collaborations. We value your feedback and look forward to connecting with fellow farmers and agri-enthusiasts.</p>
+              <div class="contact-info">
+                <p style="font-weight:bold; font-size:15px"><i class="fa fa-map-pin" aria-hidden="true"></i><span>Noida</span></p>
+                <p style="font-weight:bold; font-size:15px"><i class="fa fa-envelope" aria-hidden="true"></i><span>agrovillage2024@gmail.com</span></p>
+                <p style="font-weight:bold; font-size:15px"><i class="fa fa-phone" aria-hidden="true"></i><span>+91xxxxxxxxxx</span></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Single Footer Widget Area -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="footer-widget mb-80">
+              <h5 class="widget-title" style="font-weight:bold; font-size:15px">QUICK LINK</h5>
+              <!-- Footer Widget Nav -->
+              <nav class="footer-widget-nav">
+                <ul >
+                  <li ><a href="#" style="font-weight:bold; font-size:15px">Purchase</a></li>
+                  <li ><a href="#" style="font-weight:bold; font-size:15px">Shipping</a></li>
+                  <li ><a href="#" style="font-weight:bold; font-size:15px">Payments</a></li>
+                  <li ><a href="#" style="font-weight:bold; font-size:15px">News</a></li>
+                  <li ><a href="#" style="font-weight:bold; font-size:15px">Brands</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <!-- Single Footer Widget Area -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="footer-widget mb-80">
+              <h5 class="widget-title" style="font-weight:bold; font-size:15px;">RECENT NEWS</h5>
+
+              <!-- Single Recent News Start -->
+              <div class="single-recent-blog d-flex align-items-center">
+                <div class="post-thumbnail">
+                   <img src="{% static 'img/bg-img/4.jpg' %}" alt="">
+                </div>
+                <div class="post-content">
+                  <p style="font-weight:bold; font-size:15px;">The current critical issues that plague Indian agriculture are the
+                    knowledge and infrastructure deficits, especially in rural areas.</p>
+                  <div class="post-date">27 Aug 2023</div>
+                </div>
+              </div>
+
+             <!-- Single Recent News Start -->
+              <div class="single-recent-blog d-flex align-items-center">
+                <div class="post-thumbnail">
+                  <img src="{% static 'img/core-img/tomato.webp' %}" alt="">
+                </div>
+                <div class="post-content">
+                  <a href="#" class="post-title" style="font-weight:bold; font-size:15px;">Tomato prices hit a record</a>
+                  <div class="post-date" >08 Aug 2023</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Single Footer Widget Area -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="footer-widget mb-80">
+              <h5 class="widget-title" style="font-weight:bold; font-size:15px;">STAY CONNECTED</h5>
+              <!-- Footer Social Info -->
+              <div class="footer-social-info">
+                <a href="https://www.facebook.com/profile.php?id=61551079418806">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+        <span style="font-weight:bold; font-size:15px;">Facebook</span>
+    </a>
+               <a href="https://instagram.com/coding_master_21?igshid=MzRlODBiNWFlZA==">
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+        <span style="font-weight:bold; font-size:15px;">Instagram</span>
+    </a>
+                <a href="https://www.linkedin.com/in/kumkum-singh-0a408a1b13">
+        <i class="fa fa-linkedin" aria-hidden="true"></i>
+        <span style="font-weight:bold; font-size:15px;">Linkedin</span>
+    </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Copywrite Area  -->
+    <div class="copywrite-area">
+      <div class="container">
+        <div class="copywrite-text">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <p style="font-weight:bold; font-size:15px;"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;agrovillage <i class="fa fa-heart-o" ></i><a href="https://colorlib.com" target="_blank"></a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ##### Footer Area End ##### -->
+
+  <!-- ##### All Javascript Files ##### -->
+  <!-- jquery 2.2.4  -->
+  <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/classynav.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/wow.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.sticky.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.scrollup.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jarallax.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jarallax-video.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/active.js' %}"></script>
+</body>
+
+</html>
+</body>
+</html>

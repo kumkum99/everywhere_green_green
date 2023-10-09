@@ -1,0 +1,592 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <!-- Title -->
+  <title>About</title>
+  <!-- Favicon -->
+  <link rel="icon" href="static/img/core-img/favicon.ico">
+  <!-- Core Stylesheet -->
+  {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<style>
+   /* Add this CSS code to your stylesheet or in a <style> tag in the HTML file */
+
+  /* Initial styles for the benefits */
+  .single-benefits-area {
+    text-align: center;
+    padding: 20px;
+    overflow: hidden; /* Hide any content that overflows */
+    transition: transform 0.7s ease; /* Add a smooth transition effect for the transform property */
+  }
+
+  /* Styles for the benefits when hovered */
+  .single-benefits-area:hover {
+    transform: scale(1.5); /* Zoom in the element to 110% of its original size when hovered */
+    background-color:orange;
+  }
+
+</style>
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div class="preloader d-flex align-items-center justify-content-center">
+    <div class="spinner"></div>
+  </div>
+  <!-- header start -->
+  <header class="header-area">
+    <!-- Top Header Area -->
+    <div class="top-header-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="top-header-content d-flex align-items-center justify-content-between">
+              <!-- Top Header Content -->
+              <div class="top-header-meta">
+                <p>Welcome to <span>AgroVillage</span>, we hope you will enjoy our products and have good experience</p>
+              </div>
+              <!-- Top Header Content -->
+              <div class="top-header-meta text-right">
+                <a href="#" data-toggle="tooltip" data-placement="bottom" title="agrovillage2024@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: agrovillage2024@gmail.com</span></a>
+                <a href="#" data-toggle="tooltip" data-placement="bottom" title="9870672129"><i class="fa fa-phone" aria-hidden="true"></i> <span>Call Us:4444444</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar Area -->
+    <div class="famie-main-menu" >
+      <div class="classy-nav-container breakpoint-off">
+        <div class="container-fluid" >
+          <!-- Menu -->
+          <nav class="classy-navbar justify-content-between" id="famieNav" >
+
+            <!-- Nav Brand -->
+            <a href="{% url 'admin:login' %}?next=/admin/" class="nav-brand" style="font-size:30px; color:green;font-weight:bold;">Agro<span class="sub-color" style="color:orange">Village</span></a>
+
+            <!-- Navbar Toggler -->
+
+            <div class="classy-navbar-toggler">
+              <span class="navbarToggler"><span></span><span></span><span></span></span>
+            </div>
+            <!-- Menu -->
+            <div class="classy-menu">
+              <!-- Close Button -->
+              <div class="classycloseIcon">
+                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+              </div>
+              <!-- Navbar Start -->
+              <div class="classynav">
+                <ul>
+                  <li class="active"><a href="{% url 'index' %}" style="font-size:25px; color:green">Home</a></li>
+                  <li><a href="{% url 'about' %}" style="font-size:25px; color:green">About</a></li>
+                   <li id="poo"><a href='#' style="font-size:25px; color:green" >Services</a>
+
+                      </li>
+
+                          <li><a href="{% url 'news' %}" style="font-size:25px; color:green">News</a></li>
+
+                      <li><a href="{% url 'contact' %}" style="font-size:25px; color:green">Contact</a></li>
+                   <li><a href="{% url 'login' %}" style="font-size:25px;  color:green">Login</a></li>
+                    </ul>
+
+                <!-- Search Icon -->
+                <div id="searchIcon">
+                  <i class="icon_search" aria-hidden="true"></i>
+                </div>
+                <!-- Cart Icon -->
+                <div id="cartIcon">
+  <a href="{% url 'cart_page' %}">
+    <i class="icon_cart_alt" aria-hidden="true"></i>
+    <span id="cart-quantity">0</span>
+  </a>
+</div>
+
+              </div>
+
+              <!-- Navbar End -->
+            </div>
+            <div id="google_translate_element"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+          <a href="{% url 'weather' %}"><img src="{% static 'img/core-img/wicon.jpg' %}" height="25px" width="40px">weather</a>
+          </nav>
+
+          <!-- Search Form -->
+          <div class="search-form">
+            <form action="#" method="get">
+              <input type="search" name="search" id="search" placeholder="Type keywords &amp; press enter...">
+              <button type="submit" class="d-none"></button>
+            </form>
+            <!-- Close Icon -->
+            <div class="closeIcon"><i class="fa fa-times" aria-hidden="true"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ##### Header Area End ##### -->
+
+  <!-- ##### Breadcrumb Area Start ##### -->
+<div class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url('{% static "img/bg-img/pic3.jpg" %}');">
+
+
+
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-12">
+          <div class="breadcrumb-text">
+            <h2>About Us</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="famie-breadcrumb">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'index' %}"><i class="fa fa-home"></i> Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">About</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <!-- ##### Breadcrumb Area End ##### -->
+
+  <!-- ##### Famie Benefits Area Start ##### -->
+  <section class="famie-benefits-area pb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="benefits-thumbnail mb-50">
+         <img src="{% static 'img/bg-img/2.jpg' %}" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <!-- Single Benefits Area -->
+        <div class="col-12 col-sm-4 col-lg">
+          <div class="single-benefits-area wow fadeInUp mb-50" data-wow-delay="100ms">
+            <img src="{% static 'img/core-img/digger.png' %}" alt="">
+            <h5>Best Services</h5>
+          </div>
+        </div>
+
+        <!-- Single Benefits Area -->
+        <div class="col-12 col-sm-4 col-lg">
+          <div class="single-benefits-area wow fadeInUp mb-50" data-wow-delay="300ms">
+            <img src="{% static 'img/core-img/windmill.png' %}" alt="">
+            <h5>Farm Experiences</h5>
+          </div>
+        </div>
+
+        <!-- Single Benefits Area -->
+        <div class="col-12 col-sm-4 col-lg">
+          <div class="single-benefits-area wow fadeInUp mb-50" data-wow-delay="500ms">
+            <img src="{% static 'img/core-img/cereals.png' %}" alt="">
+            <h5>100% Natural</h5>
+          </div>
+        </div>
+
+        <!-- Single Benefits Area -->
+        <div class="col-12 col-sm-4 col-lg">
+          <div class="single-benefits-area wow fadeInUp mb-50" data-wow-delay="700ms">
+            <img src="{% static 'img/core-img/tractor.png' %}" alt="">
+            <h5>Farm Equipment</h5>
+          </div>
+        </div>
+
+        <!-- Single Benefits Area -->
+        <div class="col-12 col-sm-4 col-lg">
+          <div class="single-benefits-area wow fadeInUp mb-50" data-wow-delay="900ms">
+            <img src="{% static 'img/core-img/sunrise.png' %}" alt="">
+            <h5>Organic food</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ##### Famie Benefits Area End ##### -->
+
+  <!-- ##### About Us Area Start ##### -->
+  <section class="about-us-area">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <!-- About Us Content -->
+        <div class="col-12 col-md-8">
+          <div class="about-us-content mb-100">
+            <!-- Section Heading -->
+            <div class="section-heading">
+              <p>About us</p>
+              <h2><span>Let Us</span> Tell You Our Story</h2>
+              <img src="{% static 'img/core-img/decor.png' %}" alt="">
+            </div>
+            <p>"At the heart of our agrovillage farming project lies a journey of reconnection with nature and
+              a passion for sustainable living. Our story began with a vision to create a thriving community
+              that harmonizes modern agriculture practices with traditional wisdom. As urbanization advanced,
+              we saw the need to revive the art of farming and embrace self-sufficiency. With determination,
+              we transformed a piece of land into a vibrant agrovillage where every crop, every animal, and
+              every effort is a testament to our commitment. Our journey is one of collaboration, learning,
+              and growth. Through shared knowledge and a deep respect for the land, we've cultivated not only
+              organic produce but also a sense of belonging. Our agrovillage stands as a testament to the power
+              of sustainable agriculture to nourish both the body and the soul, bridging the gap between our
+              modern lives and the roots of our sustenance."</p>
+            <a href="#" class="btn famie-btn mt-30">Read More</a>
+          </div>
+        </div>
+
+        <!-- Famie Video Play -->
+        <div class="col-12 col-md-4">
+          <div class="famie-video-play mb-100">
+            <img src="{% static 'img/bg-img/pic8.jpg' %}" alt="">
+            <!-- Play Icon -->
+            <a href="{% static 'img/core-img/Farm.mp4' %}" class="play-icon"><i class="fa fa-play"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ##### About Us Area End ##### -->
+
+  <!-- ##### Testimonial Area Start ##### -->
+  <section class="testimonial-area bg-img bg-overlay section-padding-100 jarallax" style="background-image: url('{% static "img/bg-img/pic7.jpg" %}');">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <!-- Testimonial Slides -->
+          <div class="testimonial-slides owl-carousel">
+
+            <!-- Single Slide -->
+            <div class="single-slide">
+              <!-- Testimonial Text -->
+              <div class="testi-text d-flex">
+                <div class="quote-icon">
+                  <img src="{% static 'img/core-img/quote.png' %}" alt="">
+                </div>
+                <h5>"Thank you for your organic products. My children like your products and they use for breakfast. We are loving the pure milk, freshly fruit and of course our staple, Brown Rice Bread. Your Gluten Free breads truly make me feel
+                  lighter and uplifted. It's the only bread I plan to eat for the rest of my life. I will use them for many years."</h5>
+              </div>
+              <!-- Testimonial Thumbnail Name -->
+              <div class="testimonial-thumbnail-name d-flex align-items-center">
+                <div class="testimonial-thumbnail">
+                  <img src="{% static 'img/bg-img/pic4.jpeg' %}" alt="">
+                </div>
+                <div class="testimonial-name">
+                  <h5>Manju Bisht</h5>
+                  <h6>Customer</h6>
+                </div>
+              </div>
+            </div>
+
+            <!-- Single Slide -->
+            <div class="single-slide">
+              <!-- Testimonial Text -->
+              <div class="testi-text d-flex">
+                <div class="quote-icon">
+                 <img src="{% static 'img/core-img/quote.png' %}" alt="">
+                </div>
+                <h5>""Growing Dreams with You"
+Your website's like a digital farming mentor. The results speak for themselves—my farm's flourishing, thanks to your wisdom and quality products. Here's to many more bountiful seasons!</h5>
+              </div>
+              <!-- Testimonial Thumbnail Name -->
+              <div class="testimonial-thumbnail-name d-flex align-items-center">
+                <div class="testimonial-thumbnail">
+                  <img src="{% static 'img/bg-img/pic6.jpeg' %}" alt="">
+                </div>
+                <div class="testimonial-name">
+                  <h5>Harsh Sharma</h5>
+                  <h6>Client</h6>
+                </div>
+              </div>
+            </div>
+
+            <!-- Single Slide -->
+            <div class="single-slide">
+              <!-- Testimonial Text -->
+              <div class="testi-text d-flex">
+                <div class="quote-icon">
+                 <img src="{% static 'img/core-img/quote.png' %}" alt="">
+                </div>
+                <h5>""Eco-Friendly Farming, Finally!"
+Your website made eco-conscious farming a breeze. The information was eye-opening, and your products proved that effective farming can also be gentle on the environment. A big thumbs up from this nature lover!"</h5>
+              </div>
+              <!-- Testimonial Thumbnail Name -->
+              <div class="testimonial-thumbnail-name d-flex align-items-center">
+                <div class="testimonial-thumbnail">
+                 <img src="{% static 'img/bg-img/pic5.jpeg' %}" alt="">
+                </div>
+                <div class="testimonial-name">
+                  <h5>Bhawna Soni</h5>
+                  <h6>Customer</h6>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ##### Testimonial Area End ##### -->
+
+  <!-- ##### Team Member Area Start ##### -->
+  <section class="team-member-area section-padding-100-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <!-- Section Heading -->
+          <div class="section-heading text-center">
+            <p>MEET OUR TEAM</p>
+            <h2><span>The Great Team</span> Will Always Help You</h2>
+            <img src="{% static 'img/core-img/decor2.png' %}" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <!-- Single Team Member -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="single-team-member mb-100 wow fadeInUp" data-wow-delay="100ms">
+            <!-- Team Thumbnail -->
+            <div class="team-img">
+             <img src="{% static 'img/bg-img/pic9.jpeg' %}"  style="height:325px" alt="">
+              <!-- Social Info -->
+              <div class="team-social-info">
+                <a href="https://www.facebook.com/profile.php?id=100031299405861" data-toggle="tooltip" data-placement="right" title="Facebook"><i class="fa fa-facebook"></i></a>
+                <a href="https://instagram.com/kumkumrajput8899?igshid=MzRlODBiNWFlZA==" data-toggle="tooltip" data-placement="right" title="Instagram"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/kumkum-singh-0a408a1b13" data-toggle="tooltip" data-placement="right" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+            <!-- Team Member Info -->
+            <div class="team-member-info">
+              <h5>Kumkum Rajput</h5>
+              <h6>Team Member</h6>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single Team Member -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="single-team-member mb-100 wow fadeInUp" data-wow-delay="300ms">
+            <!-- Team Thumbnail -->
+            <div class="team-img">
+              <img src="{% static 'img/bg-img/pic12.jpeg' %}"  style="height:325px" alt="">
+              <!-- Social Info -->
+              <div class="team-social-info">
+                <a href="https://www.facebook.com/profile.php?id=100089429107115" data-toggle="tooltip" data-placement="right" title="Facebook"><i class="fa fa-facebook"></i></a>
+                <a href="https://instagram.com/renubisht3423?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D" data-toggle="tooltip" data-placement="right" title="Instagram"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/renu-bisht-76bb85243" data-toggle="tooltip" data-placement="right" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+            <!-- Team Member Info -->
+            <div class="team-member-info">
+              <h5>Renu Bisht</h5>
+              <h6>Team Member</h6>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single Team Member -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="single-team-member mb-100 wow fadeInUp" data-wow-delay="500ms">
+            <!-- Team Thumbnail -->
+            <div class="team-img">
+              <img src="{% static 'img/bg-img/pic11.jpeg' %}"  style="height:325px" alt="">
+              <!-- Social Info -->
+              <div class="team-social-info">
+             <a href="#" data-toggle="tooltip" data-placement="right" title="Facebook"><i class="fa fa-facebook"></i></a>
+<a href="https://instagram.com/coding_master_21?igshid=MzRlODBiNWFlZA==" data-toggle="tooltip" data-placement="right" title="Instagram"><i class="fa fa-instagram"></i></a>
+<a href="https://www.linkedin.com/in/sajan-sharma-662889288" data-toggle="tooltip" data-placement="right" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+            <!-- Team Member Info -->
+            <div class="team-member-info">
+              <h5>Sajan Sharma</h5>
+              <h6>Team Leader</h6>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single Team Member -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="single-team-member mb-100 wow fadeInUp" data-wow-delay="700ms">
+            <!-- Team Thumbnail -->
+            <div class="team-img">
+               <img src="{% static 'img/core-img/sadhna.jpeg' %}" style="height:325px" alt="">
+              <!-- Social Info -->
+              <div class="team-social-info">
+              <a href="https://www.facebook.com/profile.php?id=100089482994256&mibextid=b06tZ0" data-toggle="tooltip" data-placement="right" title="Facebook"><i class="fa fa-facebook"></i></a>
+<a href="https://instagram.com/itz_me_sadhana05?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D" data-toggle="tooltip" data-placement="right" title="Instagram"><i class="fa fa-instagram"></i></a>
+<a href="https://www.linkedin.com/in/sadhana-prajapati-81a18524b" data-toggle="tooltip" data-placement="right" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+            <!-- Team Member Info -->
+            <div class="team-member-info">
+              <h5>Sadhana Prajapati</h5>
+              <h6>Team Member</h6>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ##### Team Member Area End ##### -->
+
+  <!-- ##### Footer Area Start ##### -->
+  <footer class="footer-area">
+    <!-- Main Footer Area -->
+    <div class="main-footer bg-img bg-overlay section-padding-100-0" style="background-image: url('{% static "img/bg-img/3.jpg" %}');">
+      <div class="container">
+        <div class="row">
+
+          <!-- Single Footer Widget Area -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="footer-widget mb-80">
+              <a href="#" class="foo-logo d-block mb-30"><img src="img/core-img/logo2.png" alt=""></a>
+              <p style="font-weight:bold; font-size:15px">Feel free to reach out to us for any inquiries, advice, or collaborations. We value your feedback and look forward to connecting with fellow farmers and agri-enthusiasts.</p>
+              <div class="contact-info">
+                <p style="font-weight:bold; font-size:15px"><i class="fa fa-map-pin" aria-hidden="true"></i><span>Noida</span></p>
+                <p style="font-weight:bold; font-size:15px"><i class="fa fa-envelope" aria-hidden="true"></i><span>agrovillage2024@gmail.com</span></p>
+                <p style="font-weight:bold; font-size:15px"><i class="fa fa-phone" aria-hidden="true"></i><span>+91xxxxxxxxxx</span></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Single Footer Widget Area -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="footer-widget mb-80">
+              <h5 class="widget-title" style="font-weight:bold; font-size:15px">QUICK LINK</h5>
+              <!-- Footer Widget Nav -->
+              <nav class="footer-widget-nav">
+                <ul >
+                  <li ><a href="#" style="font-weight:bold; font-size:15px">Purchase</a></li>
+                  <li ><a href="#" style="font-weight:bold; font-size:15px">Shipping</a></li>
+                  <li ><a href="#" style="font-weight:bold; font-size:15px">Payments</a></li>
+                  <li ><a href="#" style="font-weight:bold; font-size:15px">News</a></li>
+                  <li ><a href="#" style="font-weight:bold; font-size:15px">Brands</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <!-- Single Footer Widget Area -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="footer-widget mb-80">
+              <h5 class="widget-title" style="font-weight:bold; font-size:15px;">RECENT NEWS</h5>
+
+              <!-- Single Recent News Start -->
+              <div class="single-recent-blog d-flex align-items-center">
+                <div class="post-thumbnail">
+                   <img src="{% static 'img/bg-img/4.jpg' %}" alt="">
+                </div>
+                <div class="post-content">
+                  <p style="font-weight:bold; font-size:15px;">The current critical issues that plague Indian agriculture are the
+                    knowledge and infrastructure deficits, especially in rural areas.</p>
+                  <div class="post-date">27 Aug 2023</div>
+                </div>
+              </div>
+
+             <!-- Single Recent News Start -->
+              <div class="single-recent-blog d-flex align-items-center">
+                <div class="post-thumbnail">
+                  <img src="{% static 'img/core-img/tomato.webp' %}" alt="">
+                </div>
+                <div class="post-content">
+                  <a href="#" class="post-title" style="font-weight:bold; font-size:15px;">Tomato prices hit a record</a>
+                  <div class="post-date" >08 Aug 2023</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Single Footer Widget Area -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="footer-widget mb-80">
+              <h5 class="widget-title" style="font-weight:bold; font-size:15px;">STAY CONNECTED</h5>
+              <!-- Footer Social Info -->
+              <div class="footer-social-info">
+                <a href="https://www.facebook.com/profile.php?id=61551079418806">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+        <span style="font-weight:bold; font-size:15px;">Facebook</span>
+    </a>
+               <a href="https://instagram.com/coding_master_21?igshid=MzRlODBiNWFlZA==">
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+        <span style="font-weight:bold; font-size:15px;">Instagram</span>
+    </a>
+                <a href="https://www.linkedin.com/in/kumkum-singh-0a408a1b13">
+        <i class="fa fa-linkedin" aria-hidden="true"></i>
+        <span style="font-weight:bold; font-size:15px;">Linkedin</span>
+    </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Copywrite Area  -->
+    <div class="copywrite-area">
+      <div class="container">
+        <div class="copywrite-text">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <p style="font-weight:bold; font-size:15px;"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;agrovillage <i class="fa fa-heart-o" ></i><a href="https://colorlib.com" target="_blank"></a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ##### Footer Area End ##### -->
+
+  <!-- ##### All Javascript Files ##### -->
+  <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/classynav.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/wow.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.sticky.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.scrollup.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jarallax.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jarallax-video.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/active.js' %}"></script>
+<script>
+  document.getElementById('poo').addEventListener('click', function () {
+    alert('When you want to access services, please sign up first...');
+    window.location.href = '/login/';
+});
+
+</script>
+</body>
+
+
+
+</html>

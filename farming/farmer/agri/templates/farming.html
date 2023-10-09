@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <!-- Title -->
+  <title>agrovillage</title>
+  <!-- Favicon -->
+  <link rel="icon" href="img/core-img/favicon.ico">
+  <!-- Core Stylesheet -->
+  {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div class="preloader d-flex align-items-center justify-content-center">
+    <div class="spinner"></div>
+  </div>
+	{% if show_alert %}
+	<div class="alert alert-success alert-dismissible fade show" role="alert">
+    Thank you for your submission!
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+	</div>
+	{% endif %}
+   <header class="header-area">
+    <!-- Top Header Area -->
+    <div class="top-header-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="top-header-content d-flex align-items-center justify-content-between">
+              <!-- Top Header Content -->
+              <div class="top-header-meta">
+                <p>Welcome to <span>AgroVillage</span>, we hope you will enjoy our products and have good experience</p>
+              </div>
+              <!-- Top Header Content -->
+              <div class="top-header-meta text-right">
+                <a href="#" data-toggle="tooltip" data-placement="bottom" title="agrovillage2024@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: agrovillage2024@gmail.com</span></a>
+                <a href="#" data-toggle="tooltip" data-placement="bottom" title="9870672129"><i class="fa fa-phone" aria-hidden="true"></i> <span>Call Us:4444444</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar Area -->
+    <div class="famie-main-menu" >
+      <div class="classy-nav-container breakpoint-off">
+        <div class="container-fluid" >
+          <!-- Menu -->
+          <nav class="classy-navbar justify-content-between" id="famieNav" >
+
+            <!-- Nav Brand -->
+            <a href="{% url 'admin:login' %}?next=/admin/" class="nav-brand" style="font-size:30px; color:green;font-weight:bold;">Agro<span class="sub-color" style="color:orange">Village</span></a>
+
+            <!-- Navbar Toggler -->
+
+            <div class="classy-navbar-toggler">
+              <span class="navbarToggler"><span></span><span></span><span></span></span>
+            </div>
+            <!-- Menu -->
+            <div class="classy-menu">
+              <!-- Close Button -->
+              <div class="classycloseIcon">
+                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+              </div>
+              <!-- Navbar Start -->
+              <div class="classynav">
+                <ul>
+                  <li class="active"><a href="{% url 'home' %}" style="font-size:25px; color:green">Home</a></li>
+                  <li><a href="{% url 'about' %}" style="font-size:25px; color:green">About</a></li>
+                  <li><a href="#" style="font-size:25px; color:green">Services</a>
+                        <ul class="dropdown">
+                          <li><a href="{% url 'ourproduct' %}" style="font-size:15px;  color:green">Our Product</a></li>
+                          <li><a href="{% url 'shop' %}" style="font-size:15px ; color:green">Shop</a></li>
+                          <li><a href="{% url 'farming' %}" style="font-size:15px; color:green">Farming Practice</a></li>
+                                  <li><a href="{% url 'bestfarmers' %}" style="font-size:15px; color:green">Best Farmers</a></li>
+                        </ul>
+                      </li>
+
+                          <li><a href="{% url 'news' %}" style="font-size:25px; color:green">News</a></li>
+
+                      <li><a href="{% url 'contact' %}" style="font-size:25px; color:green">Contact</a></li>
+                   <li><a href="{% url 'logout' %}" style="font-size:25px;  color:green">Logout</a></li>
+                    </ul>
+
+                <!-- Search Icon -->
+                <div id="searchIcon">
+                  <i class="icon_search" aria-hidden="true"></i>
+                </div>
+                <!-- Cart Icon -->
+               <div id="cartIcon">
+  <a href="{% url 'cart_page' %}">
+    <i class="icon_cart_alt" aria-hidden="true"></i>
+    <span id="cart-quantity">0</span>
+  </a>
+</div>
+
+              </div>
+
+              <!-- Navbar End -->
+            </div>
+            <div id="google_translate_element"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+          <a href="{% url 'weather' %}"><img src="{% static 'img/core-img/wicon.jpg' %}" height="25px" width="40px">weather</a>
+          </nav>
+
+          <!-- Search Form -->
+          <div class="search-form">
+            <form action="#" method="get">
+              <input type="search" name="search" id="search" placeholder="Type keywords &amp; press enter...">
+              <button type="submit" class="d-none"></button>
+            </form>
+            <!-- Close Icon -->
+            <div class="closeIcon"><i class="fa fa-times" aria-hidden="true"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ##### Header Area End ##### -->
+
+  <!-- ##### Breadcrumb Area Start ##### -->
+  <div class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url('{% static "img/bg-img/18.jpg" %}');">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-12">
+          <div class="breadcrumb-text">
+            <h2>Farming Practice</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="famie-breadcrumb">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'index' %}"><i class="fa fa-home"></i> Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Farming Practice</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <!-- ##### Breadcrumb Area End ##### -->
+
+  <!-- ##### About Us Area Start ##### -->
+  <section class="about-us-area">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <!-- About Us Thumbnail -->
+        <div class="col-12 col-lg-6">
+          <div class="about-us-thumbnail mb-100">
+            <img src="{% static 'img/core-img/fpracticegirl.webp' %}" alt="">
+               <img src="{% static 'img/core-img/fpract.jpg' %}" alt="">
+
+          </div>
+        </div>
+
+        <!-- About Us Content -->
+        <div class="col-12 col-lg-6">
+          <div class="about-us-content mb-100">
+            <!-- Section Heading -->
+            <div class="section-heading">
+              <p>FARMING PROCESS</p>
+              <h2><span>Farming Practices</span> &amp; Methods</h2>
+              <img src="{% static 'img/core-img/decor.png' %}" alt="">
+            </div>
+            <p>In agriculture, there are certain parameters to be considered such as the type of crop, properties of soil, climate etc.
+            <h3>Soil Preparation</h3>
+            Before raising a crop, the soil in which it is to be grown is prepared by ploughing, levelling, and manuring.
+            <h3>Sowing</h3>
+            Selection of seeds of good quality crop strains is the primary stage of sowing. After the preparation of soil, these seeds are dispersed in the field and this is called sowing.
+            <h3>Manuring</h3>
+            Crops need nutrients to grow and produce yield. Manuring is the step where nutritional supplements are provided and these supplements may be natural (manure) or chemical compounds (fertilizers).
+            <h3>Irrigation</h3>
+            Irrigation is the supply of water. Sources of water can be wells, ponds, lakes, canals, dams etc. Over irrigation may lead to waterlogging and damage the crop.
+            <h3>Harvesting</h3>
+            Once the crop is matured, it is cut and gathered, this process is called harvesting.
+            <h3>Storage</h3>
+            Grains yielded are stored in granaries or bins at godowns for later use or marketing. Therefore, methods of crop protection need to be better.</p>
+            <a href="https://byjus.com/biology/agriculture-agricultural-practices/" class="btn famie-btn mt-30">Read More</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ##### About Us Area End ##### -->
+
+  <!-- ##### Farming Practice Area Start ##### -->
+  <section class="farming-practice-area bg-gray section-padding-100-50">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <!-- Section Heading -->
+          <div class="section-heading text-center">
+            <p>Make the green world</p>
+            <h2><span>Farming Practices</span> To Preserve Land & Water</h2>
+            <img src="{%static 'img/core-img/decor2.png' %}" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <!-- Single Farming Practice Area -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="single-farming-practice-area mb-50 wow fadeInUp" data-wow-delay="100ms">
+            <!-- Thumbnail -->
+            <div class="farming-practice-thumbnail">
+              <img src="{%static 'img/bg-img/og.jpg' %}" alt="">
+            </div>
+            <!-- Content -->
+            <div class="farming-practice-content text-center">
+              <!-- Icon -->
+              <div class="farming-icon">
+                <img src="{%static 'img/core-img/ogn.png' %}" alt="">
+              </div>
+              <span>Farming practice for</span>
+              <h4>Organic Farming</h4>
+              <p>Organic agriculture can be defined as "an integrated farming system that strives for sustainability, the enhancement of soil fertility and biological diversity while, with rare exceptions,antibiotics, synthetic fertilizers, and growth hormones".</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single Farming Practice Area -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="single-farming-practice-area mb-50 wow fadeInUp" data-wow-delay="300ms">
+            <!-- Thumbnail -->
+            <div class="farming-practice-thumbnail">
+              <img src="{%static 'img/bg-img/mod.jpg' %}" alt="">
+            </div>
+            <!-- Content -->
+            <div class="farming-practice-content text-center">
+              <!-- Icon -->
+              <div class="farming-icon">
+                <img src="{%static 'img/core-img/smr.png' %}" alt="">
+              </div>
+              <span>Farming practice for</span>
+              <h4>Smart Farming</h4>
+              <p>Smart farming is a management concept focused on providing the agricultural industry with the infrastructure to leverage advanced technology–including big data, the cloud and the internet of things(IoT)– for tracking, monitoring, automating and analyzing operations.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single Farming Practice Area -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="single-farming-practice-area mb-50 wow fadeInUp" data-wow-delay="500ms">
+            <!-- Thumbnail -->
+            <div class="farming-practice-thumbnail">
+              <img src="{%static 'img/bg-img/sust.webp' %}" alt="">
+            </div>
+            <!-- Content -->
+            <div class="farming-practice-content text-center">
+              <!-- Icon -->
+              <div class="farming-icon">
+                <img src="{%static 'img/core-img/suslogo.png' %}" alt="">
+              </div>
+              <span>Farming practice for</span>
+              <h4>Sustainable Farming</h4>
+              <p>Sustainable agriculture is farming in sustainable ways meeting society's present food and textile needs, without compromising the ability for current or future generations to meet their needs.It can be based on an understanding of ecosystem services.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single Farming Practice Area -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="single-farming-practice-area mb-50 wow fadeInUp" data-wow-delay="100ms">
+            <!-- Thumbnail -->
+            <div class="farming-practice-thumbnail">
+              <img src="{%static 'img/bg-img/rice.jpg' %}" alt="">
+            </div>
+            <!-- Content -->
+            <div class="farming-practice-content text-center">
+              <!-- Icon -->
+              <div class="farming-icon">
+                <img src="{%static 'img/core-img/cereal.png' %}" alt="">
+              </div>
+              <span>Farming practice for</span>
+              <h4>Improved Rice Cultivation</h4>
+              <p>Rice is a Kharif crop that requires high temperatures (above 25 °C) and high humidity. It requires an annual rainfall above 100 cm. In areas with less rainfall, it grows with the help of irrigation.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single Farming Practice Area -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="single-farming-practice-area mb-50 wow fadeInUp" data-wow-delay="300ms">
+            <!-- Thumbnail -->
+            <div class="farming-practice-thumbnail">
+              <img src="{%static 'img/bg-img/13s.jpg' %}" alt="">
+            </div>
+            <!-- Content -->
+            <div class="farming-practice-content text-center">
+              <!-- Icon -->
+              <div class="farming-icon">
+                <img src="{%static 'img/core-img/sprout.png' %}" alt="">
+              </div>
+              <span>Farming practice for</span>
+              <h4>Soil Improvement Techniques</h4>
+              <p>The process of protecting soil from excessive erosion & making soil more fertile & productive. Particulate grouting, chemical grouting, displacement grouting, pressure injected Lime grouting, Jet Grouting etc.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single Farming Practice Area -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="single-farming-practice-area mb-50 wow fadeInUp" data-wow-delay="500ms">
+            <!-- Thumbnail -->
+            <div class="farming-practice-thumbnail">
+              <img src="{%static 'img/bg-img/14f.jpg' %}" alt="">
+            </div>
+            <!-- Content -->
+            <div class="farming-practice-content text-center">
+              <!-- Icon -->
+              <div class="farming-icon">
+                <img src="{%static 'img/core-img/vegetable.png' %}" alt="">
+              </div>
+              <span>Farming practice for</span>
+              <h4>Intensive Fruit Farming</h4>
+              <p>The correct answer is Orcharding. Orchard refers to an area where intensive cultivation of fruit crops is done. The correct answer is Kitchen gardening.  the year is usually termed as Home or Kitchen garden.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ##### Farming Practice Area End ##### -->
+
+  <!-- ##### FAQ Area Start ##### -->
+  <section class="famie-faq-area section-padding-100">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <!-- Section Heading -->
+          <div class="section-heading text-center">
+            <p>HAVE A QUESTION?</p>
+            <h2><span>Get answers</span> to FAQs about the service</h2>
+            <img src="img/core-img/decor2.png" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <div class="accordions" id="accordion" role="tablist" aria-multiselectable="true">
+
+            <!-- Single Accordian Area -->
+            <div class="panel single-accordion">
+              <h6><a role="button" class="" aria-expanded="true" aria-controls="collapseOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Are organic products of the same quality as other food and drink ?
+                  <span class="accor-open"><i class="arrow_carrot-up" aria-hidden="true"></i></span>
+                  <span class="accor-close"><i class="arrow_carrot-down" aria-hidden="true"></i></span>
+                </a></h6>
+              <div id="collapseOne" class="accordion-content collapse show">
+                <p>Organic production methods differ from conventional ones – but the aim is nonetheless to produce top-quality food and drink. Organic produce has to meet the same safety standards as other foods and complies with EU General Food
+                  law. The difference is that instead of using chemical compounds to combat pests or weeds, organic farmers use multi-annual crop rotations and resistant varieties to prevent such problems from occurring in the first place.</p>
+              </div>
+            </div>
+
+            <!-- Single Accordian Area -->
+            <div class="panel single-accordion">
+              <h6>
+                <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseTwo" data-parent="#accordion" data-toggle="collapse" href="#collapseTwo">how we will test are soil quality?
+                  <span class="accor-open"><i class="arrow_carrot-up" aria-hidden="true"></i></span>
+                  <span class="accor-close"><i class="arrow_carrot-down" aria-hidden="true"></i></span>
+                </a>
+              </h6>
+              <div id="collapseTwo" class="accordion-content collapse">
+                <p>AgroCares Scanner has made it possible to test soil and feed in an easier, faster, and more affordable way than with traditional methods. This enables arable farmers and advisers to take more soil samples, collect more data, and optimize their fertilization strategy. When it comes to feeding, the NutriOpt On-site Adviser offers insights into feedstuffs and nutritional recommendations to optimize animal nutrition.</p>
+              </div>
+            </div>
+
+            <!-- Single Accordian Area -->
+            <div class="panel single-accordion">
+              <h6>
+                <a role="button" aria-expanded="true" aria-controls="collapseThree" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseThree">What is difference between normal and smart farming ?
+                  <span class="accor-open"><i class="arrow_carrot-up" aria-hidden="true"></i></span>
+                  <span class="accor-close"><i class="arrow_carrot-down" aria-hidden="true"></i></span>
+                </a>
+              </h6>
+              <div id="collapseThree" class="accordion-content collapse">
+                <p>Smart farming uses technology to increase efficiency and yield, and these farmers will often use sensors and data analysis to manage their crops and irrigation. Traditional farming is an approach that relies on more manual labour and fewer technological tools. Proponents of smart farming argue that it can help farmers increase yields while using fewer resources, and that it can ultimately help make agriculture more sustainable. </p>
+              </div>
+            </div>
+
+            <!-- Single Accordian Area -->
+            <div class="panel single-accordion">
+              <h6>
+                <a role="button" aria-expanded="true" aria-controls="collapseFour" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseFour">What is irrigation and how to implement it ?
+                  <span class="accor-open"><i class="arrow_carrot-up" aria-hidden="true"></i></span>
+                  <span class="accor-close"><i class="arrow_carrot-down" aria-hidden="true"></i></span>
+                </a>
+              </h6>
+              <div id="collapseFour" class="accordion-content collapse">
+                <p>Irrigation is the process of applying water to the crops artificially to fulfil their water requirements. Nutrients may also be provided to the crops through irrigation. The various sources of water for irrigation are wells, ponds, lakes, canals, tube-wells and even dams. Irrigation offers moisture required for growth and development, germination and other related functions.
+
+The frequency, rate, amount and time of irrigation are different for different crops and also vary according to the types of soil and seasons. For example, summer crops require a higher amount of water as compared to winter crops. </p>
+              </div>
+            </div>
+
+            <!-- Single Accordian Area -->
+            <div class="panel single-accordion">
+              <h6>
+                <a role="button" aria-expanded="true" aria-controls="collapseFive" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseFive">What we will do for storing our crops for future in low cost and easy ways?
+                  <span class="accor-open"><i class="arrow_carrot-up" aria-hidden="true"></i></span>
+                  <span class="accor-close"><i class="arrow_carrot-down" aria-hidden="true"></i></span>
+                </a>
+              </h6>
+              <div id="collapseFive" class="accordion-content collapse">
+                <p>Efficient post-harvest handling storage can tremendously contribute to socio-economic empowerment in developing nations. Farmers use traditional storage containers for storing food grains for their own need.  These traditional storage systems could be applied in modern storage areas with minor modification, could save food commodities that would be damaged by insects. Although chemical methods of management of stored produce pests are highly successful, they leave behind toxic residues. The traditional wisdom and methods of storage can protect commodities from insect infestation for substantially longer periods. </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ##### FAQ Area End ##### -->
+
+  <!-- ##### Contact Area Start ##### -->
+  <section class="contact-area bg-gray section-padding-100-0">
+    <div class="container">
+      <div class="row align-items-end">
+
+        <!-- Contact Content -->
+        <div class="col-12 col-lg-7">
+          <div class="contact-content section-padding-0-100">
+            <!-- Section Heading -->
+            <div class="section-heading">
+              <p>BECOME a FARMER</p>
+              <h2><span>Start an</span> Apprenticeship Program</h2>
+             <img src="{% static 'img/core-img/decor.png' %}" alt="">
+            </div>
+            <!-- Contact Form Area -->
+            <div class="contact-form-area">
+               <form method="POST" action="{% url 'aprenticeship' %}">
+                {% csrf_token %}
+                <div class="row">
+                  <div class="col-lg-6">
+                    <input type="text" class="form-control" name="name" placeholder="Your Name">
+                  </div>
+                  <div class="col-lg-6">
+                    <input type="email" class="form-control" name="email" placeholder="Your Email">
+                  </div>
+                  <div class="col-12">
+                    <input type="text" class="form-control" name="subject" placeholder="Your Subject">
+                  </div>
+                  <div class="col-12">
+                    <textarea name="message" class="form-control" cols="30" rows="10" placeholder="Qualifications"></textarea>
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn famie-btn">Send Message</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Maps -->
+        <div class="col-lg-5">
+          <div class="consaltant-thumbnail text-center">
+            <img src="img/bg-img/25.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ##### Contact Area End ##### -->
+
+  <!-- ##### Footer Area Start ##### -->
+  <footer class="footer-area">
+    <!-- Main Footer Area -->
+    <div class="main-footer bg-img bg-overlay section-padding-100-0" style="background-image: url('{% static "img/bg-img/3.jpg" %}');">
+      <div class="container">
+        <div class="row">
+
+          <!-- Single Footer Widget Area -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="footer-widget mb-80">
+              <a href="#" class="foo-logo d-block mb-30"><img src="img/core-img/logo2.png" alt=""></a>
+              <p style="font-weight:bold; font-size:15px">Feel free to reach out to us for any inquiries, advice, or collaborations. We value your feedback and look forward to connecting with fellow farmers and agri-enthusiasts.</p>
+              <div class="contact-info">
+                <p style="font-weight:bold; font-size:15px"><i class="fa fa-map-pin" aria-hidden="true"></i><span>Noida</span></p>
+                <p style="font-weight:bold; font-size:15px"><i class="fa fa-envelope" aria-hidden="true"></i><span>agrovillage2024@gmail.com</span></p>
+                <p style="font-weight:bold; font-size:15px"><i class="fa fa-phone" aria-hidden="true"></i><span>+91xxxxxxxxxx</span></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Single Footer Widget Area -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="footer-widget mb-80">
+              <h5 class="widget-title" style="font-weight:bold; font-size:15px">QUICK LINK</h5>
+              <!-- Footer Widget Nav -->
+              <nav class="footer-widget-nav">
+                <ul >
+                  <li ><a href="#" style="font-weight:bold; font-size:15px">Purchase</a></li>
+                  <li ><a href="#" style="font-weight:bold; font-size:15px">Shipping</a></li>
+                  <li ><a href="#" style="font-weight:bold; font-size:15px">Payments</a></li>
+                  <li ><a href="#" style="font-weight:bold; font-size:15px">News</a></li>
+                  <li ><a href="#" style="font-weight:bold; font-size:15px">Brands</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <!-- Single Footer Widget Area -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="footer-widget mb-80">
+              <h5 class="widget-title" style="font-weight:bold; font-size:15px;">RECENT NEWS</h5>
+
+              <!-- Single Recent News Start -->
+              <div class="single-recent-blog d-flex align-items-center">
+                <div class="post-thumbnail">
+                   <img src="{% static 'img/bg-img/4.jpg' %}" alt="">
+                </div>
+                <div class="post-content">
+                  <p style="font-weight:bold; font-size:15px;">The current critical issues that plague Indian agriculture are the
+                    knowledge and infrastructure deficits, especially in rural areas.</p>
+                  <div class="post-date">27 Aug 2023</div>
+                </div>
+              </div>
+
+             <!-- Single Recent News Start -->
+              <div class="single-recent-blog d-flex align-items-center">
+                <div class="post-thumbnail">
+                  <img src="{% static 'img/core-img/tomato.webp' %}" alt="">
+                </div>
+                <div class="post-content">
+                  <a href="#" class="post-title" style="font-weight:bold; font-size:15px;">Tomato prices hit a record</a>
+                  <div class="post-date" >08 Aug 2023</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Single Footer Widget Area -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="footer-widget mb-80">
+              <h5 class="widget-title" style="font-weight:bold; font-size:15px;">STAY CONNECTED</h5>
+              <!-- Footer Social Info -->
+              <div class="footer-social-info">
+                <a href="https://www.facebook.com/profile.php?id=61551079418806">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+        <span style="font-weight:bold; font-size:15px;">Facebook</span>
+    </a>
+               <a href="https://instagram.com/coding_master_21?igshid=MzRlODBiNWFlZA==">
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+        <span style="font-weight:bold; font-size:15px;">Instagram</span>
+    </a>
+                <a href="https://www.linkedin.com/in/kumkum-singh-0a408a1b13">
+        <i class="fa fa-linkedin" aria-hidden="true"></i>
+        <span style="font-weight:bold; font-size:15px;">Linkedin</span>
+    </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Copywrite Area  -->
+    <div class="copywrite-area">
+      <div class="container">
+        <div class="copywrite-text">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <p style="font-weight:bold; font-size:15px;"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;agrovillage <i class="fa fa-heart-o" ></i><a href="https://colorlib.com" target="_blank"></a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ##### Footer Area End ##### -->
+
+  <!-- ##### All Javascript Files ##### -->
+  <!-- jquery 2.2.4  -->
+  <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/classynav.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/wow.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.sticky.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.scrollup.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jarallax.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jarallax-video.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/active.js' %}"></script>
+</body>
+
+</html>

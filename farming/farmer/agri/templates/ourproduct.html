@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <!-- Title -->
+  <title>Our Products</title>
+  <!-- Favicon -->
+  <link rel="icon" href="img/core-img/favicon.ico">
+  <!-- Core Stylesheet -->
+   {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+  <style>
+    h3{
+    font-size:20px;
+    color:orange;
+    text-align:center;
+    font-weight:bold;
+    }
+    h2{
+    text-align:center;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div class="preloader d-flex align-items-center justify-content-center">
+    <div class="spinner"></div>
+  </div>
+<!-- start header -->
+   <header class="header-area">
+    <!-- Top Header Area -->
+    <div class="top-header-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="top-header-content d-flex align-items-center justify-content-between">
+              <!-- Top Header Content -->
+              <div class="top-header-meta">
+                <p>Welcome to <span>AgroVillage</span>, we hope you will enjoy our products and have good experience</p>
+              </div>
+              <!-- Top Header Content -->
+              <div class="top-header-meta text-right">
+                <a href="#" data-toggle="tooltip" data-placement="bottom" title="agrovillage2024@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: agrovillage2024@gmail.com</span></a>
+                <a href="#" data-toggle="tooltip" data-placement="bottom" title="9870672129"><i class="fa fa-phone" aria-hidden="true"></i> <span>Call Us:4444444</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar Area -->
+    <div class="famie-main-menu" >
+      <div class="classy-nav-container breakpoint-off">
+        <div class="container-fluid" >
+          <!-- Menu -->
+          <nav class="classy-navbar justify-content-between" id="famieNav" >
+
+            <!-- Nav Brand -->
+            <a href="{% url 'admin:login' %}?next=/admin/" class="nav-brand" style="font-size:30px; color:green;font-weight:bold;">Agro<span class="sub-color" style="color:orange">Village</span></a>
+
+            <!-- Navbar Toggler -->
+
+            <div class="classy-navbar-toggler">
+              <span class="navbarToggler"><span></span><span></span><span></span></span>
+            </div>
+            <!-- Menu -->
+            <div class="classy-menu">
+              <!-- Close Button -->
+              <div class="classycloseIcon">
+                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+              </div>
+              <!-- Navbar Start -->
+              <div class="classynav">
+                <ul>
+                  <li class="active"><a href="{% url 'home' %}" style="font-size:25px; color:green">Home</a></li>
+                  <li><a href="{% url 'about' %}" style="font-size:25px; color:green">About</a></li>
+                  <li><a href="#" style="font-size:25px; color:green">Services</a>
+                        <ul class="dropdown">
+                          <li><a href="{% url 'ourproduct' %}" style="font-size:15px;  color:green">Our Product</a></li>
+                          <li><a href="{% url 'shop' %}" style="font-size:15px ; color:green">Shop</a></li>
+                          <li><a href="{% url 'farming' %}" style="font-size:15px; color:green">Farming Practice</a></li>
+                                  <li><a href="{% url 'bestfarmers' %}" style="font-size:15px; color:green">Best Farmers</a></li>
+                        </ul>
+                      </li>
+
+                          <li><a href="{% url 'news' %}" style="font-size:25px; color:green">News</a></li>
+
+                      <li><a href="{% url 'contact' %}" style="font-size:25px; color:green">Contact</a></li>
+                   <li><a href="{% url 'logout' %}" style="font-size:25px;  color:green">Logout</a></li>
+                    </ul>
+
+                <!-- Search Icon -->
+                <div id="searchIcon">
+                  <i class="icon_search" aria-hidden="true"></i>
+                </div>
+                <!-- Cart Icon -->
+                <div id="cartIcon">
+  <a href="{% url 'cart_page' %}">
+    <i class="icon_cart_alt" aria-hidden="true"></i>
+    <span id="cart-quantity">0</span>
+  </a>
+</div>
+
+              </div>
+
+              <!-- Navbar End -->
+            </div>
+            <div id="google_translate_element"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+          <a href="{% url 'weather' %}"><img src="{% static 'img/core-img/wicon.jpg' %}" height="25px" width="40px">weather</a>
+          </nav>
+
+          <!-- Search Form -->
+          <div class="search-form">
+            <form action="#" method="get">
+              <input type="search" name="search" id="search" placeholder="Type keywords &amp; press enter...">
+              <button type="submit" class="d-none"></button>
+            </form>
+            <!-- Close Icon -->
+            <div class="closeIcon"><i class="fa fa-times" aria-hidden="true"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ##### Header Area End ##### -->
+
+  <!-- ##### Breadcrumb Area Start ##### -->
+  <div class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image:  url('{% static 'img/core-img/vege.jpg' %}');">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-12">
+          <div class="breadcrumb-text">
+            <h2>Our Product</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="famie-breadcrumb">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'index' %}"><i class="fa fa-home"></i> Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Our Product</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <!-- ##### Breadcrumb Area End ##### -->
+
+  <!-- ##### About Us Area Start ##### -->
+  <section class="about-us-area">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <!-- About Us Content -->
+        <div class="col-12 col-lg-6">
+          <div class="about-us-content mb-100">
+            <!-- Section Heading -->
+            <div class="section-heading">
+              <p>FARM PRODUCE</p>
+              <h2><span>The Future</span> Of Agriculture </h2>
+              <img src="img/core-img/decor.png" alt="">
+            </div>
+            <p>One of the critical challenges for a country’s food security is climate change and its impact in form of extreme weather events. The predicted 1-2.5 degrees Celsius temperature rise by 2030 is likely to show serious effects on crop yields. High temperatures may reduce crop duration, permit changes in photosynthesis, escalate crop respiration rates and influence pest population.</p>
+            <a href="https://www.downtoearth.org.in/blog/agriculture/why-india-needs-climate-resilient-agriculture-systems-75381" class="btn famie-btn mt-30">Read More</a>
+          </div>
+        </div>
+
+        <!-- Famie Video Play -->
+        <div class="col-12 col-lg-6">
+          <div class="about-us-thumbnail mb-100">
+            <img src="{% static 'img/bg-img/19.jpg' %}" alt="">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ##### About Us Area End ##### -->
+
+  <!-- ##### Services Area Start ##### -->
+  <section class="services-area d-flex flex-wrap">
+    <!-- Service Thumbnail -->
+    <div class="services-thumbnail bg-img jarallax" style="background-image: url('{% static 'img/core-img/veg1.jpg' %}');"></div>
+
+    <!-- Service Content -->
+    <div class="services-content section-padding-100-50 px-5">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <!-- Section Heading -->
+            <div class="section-heading">
+              <h3>What we do</h3>
+              <h2><span>Our Produce</span> Is Mainstay For Us</h2>
+              <img src="{% static 'img/core-img/decor.png' %}" alt="">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 mb-50">
+            <p style="text-align:justify;">Agro products encompass all food items that are made for human and animal consumption.  Fuel is a substance that can release energy to produce heat or power. Agro products, such as corn and sugarcane, can create ethanol, for example. Agricultural crops, such as cotton, wool, and silk are often used by textile companies to create linen pieces. </p>
+          </div>
+
+          <!-- Single Service Area -->
+          <div class="col-12 col-lg-6">
+            <div class="single-service-area mb-50 wow fadeInUp" data-wow-delay="100ms">
+              <!-- Service Title -->
+              <div class="service-title mb-3 d-flex align-items-center">
+                <img src="{% static 'img/core-img/s1.png' %}" alt="">
+                <h5>Fruit &amp; Vegetable</h5>
+              </div>
+              <p style="text-align:justify;">Fruits and vegetables contain important vitamins, minerals and plant chemicals. They also contain fibre. Wer provided fresh, natural and Organic fruits and vegetables. Green vegetables and Fruits make you healthy and strong. Fruits   </p>
+            </div>
+          </div>
+
+          <!-- Single Service Area -->
+          <div class="col-12 col-lg-6">
+            <div class="single-service-area mb-50 wow fadeInUp" data-wow-delay="200ms">
+              <!-- Service Title -->
+              <div class="service-title mb-3 d-flex align-items-center">
+                <img src="{% static 'img/core-img/s3.png' %}" alt="">
+                <h5>Millet & Corn</h5>
+              </div>
+              <p style="text-align:justify;">We produce millet and corn in two times in a year. Millet has more Copper, however, Corn is richer in Vitamin B5, and Vitamin c. millet is very beneficial  for health. Corn is mostly use for making snacks.</p>
+            </div>
+          </div>
+
+          <!-- Single Service Area -->
+          <div class="col-12 col-lg-6">
+            <div class="single-service-area mb-50 wow fadeInUp" data-wow-delay="300ms">
+              <!-- Service Title -->
+              <div class="service-title mb-3 d-flex align-items-center">
+                <img src="{% static 'img/core-img/s2.png' %}" alt="">
+                <h5>Wheat & Potato</h5>
+              </div>
+              <p style="text-align:justify;">We produce more varieties of potato and wheat.  Potato is known as king og vegetables because it used with most of the vegetables. wheat is the basic need of Nort Indians and also use for making breads, biscuits etc. The yield of potato and wheat crops can vary depending on various factors such as climate, soil conditions, farming practices. </p>
+            </div>
+          </div>
+
+          <!-- Single Service Area -->
+          <div class="col-12 col-lg-6">
+            <div class="single-service-area mb-50 wow fadeInUp" data-wow-delay="400ms">
+              <!-- Service Title -->
+              <div class="service-title mb-3 d-flex align-items-center">
+                <img src="{% static 'img/core-img/s4.png' %}" alt="">
+                <h5>Rice</h5>
+              </div>
+              <p style="text-align:justify;">We provide some varieties of rice like Brown rice, White rice, Sugandha rice and Basmati rice, our rice quality is high. Roughly one-half of the world population, including virtually all of East and Southeast Asia, is wholly dependent upon rice as a staple food; 95 percent of the world’s rice crop is eaten by humans.  </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ##### Services Area End ##### -->
+
+  <!-- ##### Our Products Area Start ##### -->
+  <section class="our-products-area section-padding-100">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <!-- Section Heading -->
+          <div class="section-heading text-center">
+            <p>Featured Products</p>
+            <h2><span>Our Product</span> Are Highest Quality</h2>
+            <img src="{% static 'img/core-img/decor2.png' %}" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <!-- Single Product Area -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="single-product-area mb-50">
+            <!-- Product Thumbnail -->
+            <div class="product-thumbnail">
+              <img src="{% static 'img/bg-img/aaluu.jpg' %}" alt="">
+              <!-- Product Tags -->
+              <span class="product-tags">Hot</span>
+              <!-- Product Meta Data -->
+              <div class="product-meta-data">
+                <a href="#" data-toggle="tooltip" data-placement="top" title="Favourite"><i class="icon_heart_alt"></i></a>
+                <a href="#" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon_cart_alt"></i></a>
+                <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="arrow_left-right_alt"></i></a>
+              </div>
+            </div>
+            <!-- Product Description -->
+            <div class="product-desc text-center pt-4">
+              <a href="#" class="product-title">Potato</a>
+              <h6 class="price">50rs. per kg</h6>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single Product Area -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="single-product-area mb-50">
+            <!-- Product Thumbnail -->
+            <div class="product-thumbnail">
+              <img src="{% static 'img/bg-img/gehnu1.jpg' %}" alt="">
+              <!-- Product Meta Data -->
+              <div class="product-meta-data">
+                <a href="#" data-toggle="tooltip" data-placement="top" title="Favourite"><i class="icon_heart_alt"></i></a>
+                <a href="#" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon_cart_alt"></i></a>
+                <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="arrow_left-right_alt"></i></a>
+              </div>
+            </div>
+            <!-- Product Description -->
+            <div class="product-desc text-center pt-4">
+              <a href="#" class="product-title">Wheat</a>
+              <h6 class="price">1400rs. per quintal</h6>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single Product Area -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="single-product-area mb-50">
+            <!-- Product Thumbnail -->
+            <div class="product-thumbnail">
+              <img src="{% static 'img/bg-img/makka.jpg' %}" alt="">
+              <!-- Product Meta Data -->
+              <div class="product-meta-data">
+                <a href="#" data-toggle="tooltip" data-placement="top" title="Favourite"><i class="icon_heart_alt"></i></a>
+                <a href="#" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon_cart_alt"></i></a>
+                <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="arrow_left-right_alt"></i></a>
+              </div>
+            </div>
+            <!-- Product Description -->
+            <div class="product-desc text-center pt-4">
+              <a href="#" class="product-title">Corn</a>
+              <h6 class="price">1500rs. per quintal</h6>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single Product Area -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="single-product-area mb-50">
+            <!-- Product Thumbnail -->
+            <div class="product-thumbnail">
+              <img src="{% static 'img/bg-img/amr.jpg' %}" alt="">
+              <!-- Product Tags -->
+              <span class="product-tags bg-danger">Sale</span>
+              <!-- Product Meta Data -->
+              <div class="product-meta-data">
+                <a href="#" data-toggle="tooltip" data-placement="top" title="Favourite"><i class="icon_heart_alt"></i></a>
+                <a href="#" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon_cart_alt"></i></a>
+                <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="arrow_left-right_alt"></i></a>
+              </div>
+            </div>
+            <!-- Product Description -->
+            <div class="product-desc text-center pt-4">
+              <a href="#" class="product-title">Guava</a>
+              <h6 class="price"><span>60rs. per kg</span>40rs. per kg</h6>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <div class="gotoshop-btn text-center">
+            <a href="{% url 'shop' %}" class="btn famie-btn">Go to Store</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ##### Our Products Area End ##### -->
+
+
+  <!-- ##### Footer Area Start ##### -->
+ <footer class="footer-area">
+    <!-- Main Footer Area -->
+    <div class="main-footer bg-img bg-overlay section-padding-100-0" style="background-image: url('{% static "img/bg-img/3.jpg" %}');">
+      <div class="container">
+        <div class="row">
+
+          <!-- Single Footer Widget Area -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="footer-widget mb-80">
+              <a href="#" class="foo-logo d-block mb-30"><img src="img/core-img/logo2.png" alt=""></a>
+              <p style="font-weight:bold; font-size:15px">Feel free to reach out to us for any inquiries, advice, or collaborations. We value your feedback and look forward to connecting with fellow farmers and agri-enthusiasts.</p>
+              <div class="contact-info">
+                <p style="font-weight:bold; font-size:15px"><i class="fa fa-map-pin" aria-hidden="true"></i><span>Noida</span></p>
+                <p style="font-weight:bold; font-size:15px"><i class="fa fa-envelope" aria-hidden="true"></i><span>agrovillage2024@gmail.com</span></p>
+                <p style="font-weight:bold; font-size:15px"><i class="fa fa-phone" aria-hidden="true"></i><span>+91xxxxxxxxxx</span></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Single Footer Widget Area -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="footer-widget mb-80">
+              <h5 class="widget-title" style="font-weight:bold; font-size:15px">QUICK LINK</h5>
+              <!-- Footer Widget Nav -->
+              <nav class="footer-widget-nav">
+                <ul >
+                  <li ><a href="#" style="font-weight:bold; font-size:15px">Purchase</a></li>
+                  <li ><a href="#" style="font-weight:bold; font-size:15px">Shipping</a></li>
+                  <li ><a href="#" style="font-weight:bold; font-size:15px">Payments</a></li>
+                  <li ><a href="#" style="font-weight:bold; font-size:15px">News</a></li>
+                  <li ><a href="#" style="font-weight:bold; font-size:15px">Brands</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <!-- Single Footer Widget Area -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="footer-widget mb-80">
+              <h5 class="widget-title" style="font-weight:bold; font-size:15px;">RECENT NEWS</h5>
+
+              <!-- Single Recent News Start -->
+              <div class="single-recent-blog d-flex align-items-center">
+                <div class="post-thumbnail">
+                   <img src="{% static 'img/bg-img/4.jpg' %}" alt="">
+                </div>
+                <div class="post-content">
+                  <p style="font-weight:bold; font-size:15px;">The current critical issues that plague Indian agriculture are the
+                    knowledge and infrastructure deficits, especially in rural areas.</p>
+                  <div class="post-date">27 Aug 2023</div>
+                </div>
+              </div>
+
+             <!-- Single Recent News Start -->
+              <div class="single-recent-blog d-flex align-items-center">
+                <div class="post-thumbnail">
+                  <img src="{% static 'img/core-img/tomato.webp' %}" alt="">
+                </div>
+                <div class="post-content">
+                  <a href="#" class="post-title" style="font-weight:bold; font-size:15px;">Tomato prices hit a record</a>
+                  <div class="post-date" >08 Aug 2023</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Single Footer Widget Area -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="footer-widget mb-80">
+              <h5 class="widget-title" style="font-weight:bold; font-size:15px;">STAY CONNECTED</h5>
+              <!-- Footer Social Info -->
+              <div class="footer-social-info">
+                <a href="https://www.facebook.com/profile.php?id=61551079418806">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+        <span style="font-weight:bold; font-size:15px;">Facebook</span>
+    </a>
+               <a href="https://instagram.com/coding_master_21?igshid=MzRlODBiNWFlZA==">
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+        <span style="font-weight:bold; font-size:15px;">Instagram</span>
+    </a>
+                <a href="https://www.linkedin.com/in/kumkum-singh-0a408a1b13">
+        <i class="fa fa-linkedin" aria-hidden="true"></i>
+        <span style="font-weight:bold; font-size:15px;">Linkedin</span>
+    </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Copywrite Area  -->
+    <div class="copywrite-area">
+      <div class="container">
+        <div class="copywrite-text">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <p style="font-weight:bold; font-size:15px;"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;agrovillage <i class="fa fa-heart-o" ></i><a href="https://colorlib.com" target="_blank"></a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ##### Footer Area End ##### -->
+
+  <!-- ##### All Javascript Files ##### -->
+  <!-- jquery 2.2.4  -->
+  <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/classynav.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/wow.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.sticky.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.scrollup.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jarallax.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jarallax-video.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/active.js' %}"></script>
+</body>
+
+</html>

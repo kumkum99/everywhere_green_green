@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- The above 4 meta tags must come first in the head; any other head content must come after these tags -->
+  <!-- Title -->
+  <title>cart</title>
+  <!-- Favicon -->
+  <!-- Core Stylesheet -->
+  {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+  <style>
+    h3{
+color:orange;
+text-align:center;
+
+}
+    h5{
+    font-size:20px;
+    }
+
+  /* Add this CSS code to your stylesheet or in a <style> tag in the HTML file */
+
+  /* Initial styles for the benefits */
+  .single-benefits-area {
+    text-align: center;
+    padding: 20px;
+    overflow: hidden; /* Hide any content that overflows */
+    transition: transform 0.7s ease; /* Add a smooth transition effect for the transform property */
+  }
+
+  /* Styles for the benefits when hovered */
+  .single-benefits-area:hover {
+    transform: scale(1.5); /* Zoom in the element to 110% of its original size when hovered */
+    background-color:yellow;
+  }
+ @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cart-item {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        /* Add hover effect for Purchase button */
+        #purchase-button {
+            /* Your existing styles... */
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        #purchase-button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        #cart {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center; /* Center the button */
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .cart-item img {
+            max-width: 100px;
+            margin-right: 20px;
+        }
+
+        .item-details {
+            flex-grow: 1;
+        }
+
+        .item-details h3 {
+            margin: 0 0 10px;
+        }
+
+        .item-details p {
+            margin: 0;
+        }
+
+        #purchase-button {
+            background-color: #4CAF50; /* Green background color */
+            border: none; /* Remove borders */
+            color: white; /* White text color */
+            padding: 10px 20px; /* Add some padding */
+            font-size: 16px; /* Increase font size */
+            cursor: pointer; /* Add a pointer cursor on hover */
+            border-radius: 5px; /* Rounded corners */
+        }
+
+        #purchase-button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+</style>
+
+</head>
+<body>
+    <script>
+
+        function searchPage() {
+            var searchTerm = document.getElementById("search").value.toLowerCase();
+
+            if (searchTerm === "about") {
+                window.location.href = "about.html";
+                return false; // Prevent the form from submitting
+            } else {
+                alert("Page not found!");
+                return false; // Prevent the form from submitting
+            }
+        }
+
+    </script>
+ <!-- ##### Header Area Start ##### -->
+  <header class="header-area">
+    <!-- Top Header Area -->
+    <div class="top-header-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="top-header-content d-flex align-items-center justify-content-between">
+              <!-- Top Header Content -->
+              <div class="top-header-meta">
+                <p>Welcome to <span>AgroVillage</span>, we hope you will enjoy our products and have good experience</p>
+              </div>
+              <!-- Top Header Content -->
+              <div class="top-header-meta text-right">
+                <a href="#" data-toggle="tooltip" data-placement="bottom" title="infodeercreative@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: agrovillage2024@gmail.com</span></a>
+                <a href="#" data-toggle="tooltip" data-placement="bottom" title="9870672129"><i class="fa fa-phone" aria-hidden="true"></i> <span>Call Us:9870672129</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar Area -->
+    <div class="famie-main-menu" >
+      <div class="classy-nav-container breakpoint-off">
+        <div class="container-fluid" >
+          <!-- Menu -->
+          <nav class="classy-navbar justify-content-between" id="famieNav" >
+            <!-- Nav Brand -->
+            <a href="{% url 'index' %}" class="nav-brand" style="font-size:30px">Agro<span class="sub-color" style="color:orange">Village</span></a>
+            <!-- Navbar Toggler -->
+            <div class="classy-navbar-toggler">
+              <span class="navbarToggler"><span></span><span></span><span></span></span>
+            </div>
+            <!-- Menu -->
+            <div class="classy-menu">
+              <!-- Close Button -->
+              <div class="classycloseIcon">
+                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+              </div>
+              <!-- Navbar Start -->
+              <div class="classynav">
+                <ul>
+                  <li class="active"><a href="{% url 'index' %}" style="font-size:15px; color:green">Home</a></li>
+                  <li><a href="{% url 'about' %}" style="font-size:15px; color:green">About</a></li>
+                  <li><a href="#" style="font-size:15px; color:green">Services</a>
+                        <ul class="dropdown">
+                          <li><a href="{% url 'ourproduct' %}" style="font-size:15px;  color:green">Our Product</a></li>
+                          <li><a href="{% url 'shop' %}" style="font-size:15px ; color:green">Shop</a></li>
+                          <li><a href="{% url 'farming' %}" style="font-size:15px; color:green">Farming Practice</a></li>
+                        </ul>
+                      </li>
+
+                          <li><a href="{% url 'news' %}" style="font-size:15px; color:green">News</a></li>
+
+                      <li><a href="{% url 'contact' %}" style="font-size:15px; color:green">Contact</a></li>
+                   <li><a href="{% url 'signup' %}" style="font-size:15px;  color:green">Signup</a></li>
+                    </ul>
+
+                <!-- Search Icon -->
+                <div id="searchIcon">
+                  <i class="icon_search" aria-hidden="true"></i>
+                </div>
+                <!-- Cart Icon -->
+                <div id="cartIcon">
+                  <a href="${imageUrl}">
+                    <i class="icon_cart_alt" aria-hidden="true"></i>
+                    <span class="cart-quantity">1</span>
+                  </a>
+                </div>
+
+              </div>
+
+              <!-- Navbar End -->
+            </div>
+            <div id="google_translate_element"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+          <a href="{% url 'weather' %}"><img src="{% static 'img/core-img/wicon.jpg' %}" height="25px" width="40px">weather</a>
+          </nav>
+
+
+
+
+
+
+
+
+
+
+    <div id="cart">
+        <h1>Your Cart</h1>
+        <ul id="cart-items"></ul>
+        <a href="{% url 'pay' %}" id="purchase-button">Purchase</a>
+
+
+    </div>
+        </div>
+      </div>
+    </div>
+  </header>
+    <script>
+// Your cart data
+let cart = [
+    {
+        name: 'Potato',
+        quantity: 1,
+        price: 25,
+        imageUrl: 'https://plus.unsplash.com/premium_photo-1686529811856-c05734b82434?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'
+    },
+    { name: 'Ladyfinger', quantity: 1, price: 30, imageUrl: "https://cdn.pixabay.com/photo/2020/03/09/09/09/okra-4915051_640.jpg" },
+    { name: 'Tomato', quantity: 1, price: 15, imageUrl: "https://images8.alphacoders.com/738/thumbbig-738332.webp" },
+    { name: 'Spinach', quantity: 1, price: 40, imageUrl: "https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG90YXRvfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" },
+    { name: 'Cabbage', quantity: 1, price: 25, imageUrl: "https://images.pexels.com/photos/14281758/pexels-photo-14281758.jpeg?auto=compress&cs=tinysrgb&w=600"},
+    { name: 'Cauliflower', quantity: 1, price: 12, imageUrl: "https://images.unsplash.com/photo-1510627498534-cf7e9002facc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2F1bGlmbG93ZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" },
+    { name: 'Cucumber', quantity: 1, price: 22, imageUrl: "https://images.pexels.com/photos/2329440/pexels-photo-2329440.jpeg?auto=compress&cs=tinysrgb&w=600" },
+    { name: 'Onion', quantity: 1, price: 25, imageUrl: "https://img.freepik.com/free-photo/close-up-view-whole-red-onions-white-background_141793-5440.jpg?size=626&ext=jpg&ga=GA1.1.1210628482.1692876107&semt=sph" },
+    { name: 'Green Beans', quantity: 1, price: 18, imageUrl: "https://images.pexels.com/photos/3004798/pexels-photo-3004798.jpeg?auto=compress&cs=tinysrgb&w=600" }
+];
+
+// Retrieve cart data from local storage (or however you're storing it)
+let cartFromStorage = JSON.parse(localStorage.getItem('cart')) || [];
+
+// If there's data in local storage, use it. Otherwise, use the default cart.
+cart = cartFromStorage.length > 0 ? cartFromStorage : cart;
+
+// Display items in the cart
+const cartItemsElement = document.getElementById('cart-items');
+cart.forEach(item => {
+    const li = document.createElement('li');
+    li.innerHTML = `
+        <div class="cart-item">
+            <img src="${item.imageUrl}" alt="${item.name}">
+            <div class="item-details">
+                <h3>${item.name}</h3>
+                <p>Price: $${item.price}</p>
+                <p>Quantity: ${item.quantity}</p>
+            </div>
+        </div>
+    `;
+    cartItemsElement.appendChild(li);
+});
+
+// Calculate the total amount
+let totalAmount = 0;
+cart.forEach(item => {
+    totalAmount += item.price * item.quantity;
+});
+
+// Display the total amount
+const totalAmountElement = document.createElement('div');
+totalAmountElement.innerHTML = `
+    <h2>Total Amount: $${totalAmount}</h2>
+`;
+cartItemsElement.appendChild(totalAmountElement);
+
+    </script>
+    </body>
+</html>

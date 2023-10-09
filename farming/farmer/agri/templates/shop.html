@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <!-- Title -->
+  <title> Shop</title>
+  <!-- Favicon -->
+  <link rel="icon" href="img/core-img/favicon.ico">
+  <!-- Core Stylesheet -->
+ {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<style>
+
+  /* CSS to make all product images the same size */
+  .product-thumbnail img {
+    width: 100%;
+    height: auto;
+    max-height: 250px; /* You can adjust this value as needed */
+  }
+
+</style>
+<body>
+  <!-- Preloader -->
+  <div class="preloader d-flex align-items-center justify-content-center">
+    <div class="spinner"></div>
+  </div>
+<!-- header start-->
+  <header class="header-area">
+    <!-- Top Header Area -->
+    <div class="top-header-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="top-header-content d-flex align-items-center justify-content-between">
+              <!-- Top Header Content -->
+              <div class="top-header-meta">
+                <p>Welcome to <span>AgroVillage</span>, we hope you will enjoy our products and have good experience</p>
+              </div>
+              <!-- Top Header Content -->
+              <div class="top-header-meta text-right">
+                <a href="#" data-toggle="tooltip" data-placement="bottom" title="agrovillage2024@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: agrovillage2024@gmail.com</span></a>
+                <a href="#" data-toggle="tooltip" data-placement="bottom" title="9870672129"><i class="fa fa-phone" aria-hidden="true"></i> <span>Call Us:4444444</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar Area -->
+    <div class="famie-main-menu" >
+      <div class="classy-nav-container breakpoint-off">
+        <div class="container-fluid" >
+          <!-- Menu -->
+          <nav class="classy-navbar justify-content-between" id="famieNav" >
+
+            <!-- Nav Brand -->
+<a href="{% url 'admin:login' %}?next=/admin/" class="nav-brand" style="font-size:30px; color:green; font-weight:bold;">Agro<span class="sub-color" style="color:orange;">Village</span></a>
+
+
+            <!-- Navbar Toggler -->
+
+            <div class="classy-navbar-toggler">
+              <span class="navbarToggler"><span></span><span></span><span></span></span>
+            </div>
+            <!-- Menu -->
+            <div class="classy-menu">
+              <!-- Close Button -->
+              <div class="classycloseIcon">
+                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+              </div>
+              <!-- Navbar Start -->
+              <div class="classynav">
+                <ul>
+                  <li class="active"><a href="{% url 'home' %}" style="font-size:25px; color:green">Home</a></li>
+                  <li><a href="{% url 'about' %}" style="font-size:25px; color:green">About</a></li>
+                  <li><a href="#" style="font-size:25px; color:green">Services</a>
+                        <ul class="dropdown">
+                          <li><a href="{% url 'ourproduct' %}" style="font-size:15px;  color:green">Our Product</a></li>
+                          <li><a href="{% url 'shop' %}" style="font-size:15px ; color:green">Shop</a></li>
+                          <li><a href="{% url 'farming' %}" style="font-size:15px; color:green">Farming Practice</a></li>
+                                  <li><a href="{% url 'bestfarmers' %}" style="font-size:15px; color:green">Best Farmers</a></li>
+                        </ul>
+                      </li>
+
+                          <li><a href="{% url 'news' %}" style="font-size:25px; color:green">News</a></li>
+
+                      <li><a href="{% url 'contact' %}" style="font-size:25px; color:green">Contact</a></li>
+                   <li><a href="{% url 'logout' %}" style="font-size:25px;  color:green">Logout</a></li>
+                    </ul>
+
+                <!-- Search Icon -->
+                <div id="searchIcon">
+                  <i class="icon_search" aria-hidden="true"></i>
+                </div>
+                 <!-- Cart Icon -->
+                <!-- cart/cart.html -->
+
+<div id="cartIcon">
+  <a href="{% url 'cart_page' %}">
+    <i class="icon_cart_alt" aria-hidden="true"></i>
+    <span id="cart-quantity">0</span>
+  </a>
+</div>
+
+
+              </div>
+
+              <!-- Navbar End -->
+            </div>
+            <div id="google_translate_element"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+          <a href="{% url 'weather' %}"><img src="{% static 'img/core-img/wicon.jpg' %}" height="25px" width="40px">weather</a>
+          </nav>
+
+          <!-- Search Form -->
+          <div class="search-form">
+            <form action="#" method="get">
+              <input type="search" name="search" id="search" placeholder="Type keywords &amp; press enter...">
+              <button type="submit" class="d-none"></button>
+            </form>
+            <!-- Close Icon -->
+            <div class="closeIcon"><i class="fa fa-times" aria-hidden="true"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ##### Header Area End ##### -->
+
+
+  <!-- ##### Breadcrumb Area Start ##### -->
+  <div class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGFncmljdWx0dXJlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60');">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-12">
+          <div class="breadcrumb-text">
+            <h2>Shop</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="famie-breadcrumb">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'index' %}"><i class="fa fa-home"></i> Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Shop</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <!-- ##### Breadcrumb Area End ##### -->
+
+  <!-- ##### Shop Area Start ##### -->
+  <section class="shop-area section-padding-0-100">
+    <div class="container">
+
+      <div class="row">
+        <!-- Shop Filters -->
+        <div class="col-12">
+          <div class="shop-filters mb-30 d-flex align-items-center justify-content-between">
+            <!-- Product Show -->
+            <div class="product-show">
+              <h6>Showing 1–9 of 72 results</h6>
+            </div>
+
+            <!-- Product View Mode -->
+            <div class="produtc-view-mode">
+              <a href="#"><i class="fa fa-th"></i></a>
+              <a href="#"><i class="fa fa-list-ul"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Shop Sidebar Area -->
+        <div class="col-12 col-md-4 col-lg-3">
+
+          <!-- Shopping Cart -->
+          <div class="shopping-cart mb-50">
+            <h5 class="mb-30">Shopping Cart</h5>
+            <!-- Cart Table -->
+            <div class="cart-table clearfix">
+              <table class="table table-responsive">
+                <!-- tbody -->
+                <tbody>
+                  <!-- Single Table Row -->
+                  <tr>
+                    <td class="cart_product_img">
+                      <a href="#"><img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG90YXRvfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Product"></a>
+                    </td>
+                    <td class="cart_product_desc">
+                      <p>Potato</p>
+                      <h6>35 per kg</h6>
+                    </td>
+
+
+                    <td class="pro-close">
+                      <a href="#"><i class=""></i></a>
+                    </td>
+                  </tr>
+                  <!-- Single Table Row -->
+                  <tr>
+                    <td class="cart_product_img">
+                      <a href="#"><img src="https://as2.ftcdn.net/v2/jpg/00/10/29/23/1000_F_10292371_BsQYLOgfIprEzthJGzSZ9jklsYvyH95I.jpg" alt="Product"></a>
+                    </td>
+                    <td class="cart_product_desc">
+                      <p>Corn</p>
+                      <h6>1 x 39</h6>
+                    </td>
+                    <td class="pro-close">
+                      <a href="#"><i class=""></i></a>
+                    </td>
+                  </tr>
+                  <!-- Single Table Row -->
+                  <tr>
+                    <td class="cart_product_img">
+                      <a href="#"><img src="data:image/jpeg;base64,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" alt="Product"></a>
+                    </td>
+                    <td class="cart_product_desc">
+                      <p>Wheat</p>
+                      <h6>1 x 49</h6>
+                    </td>
+                    <td class="pro-close">
+                      <a href="#"><i class=""></i></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Single Widget Area -->
+          <div class="single-widget-area">
+            <!-- Title -->
+
+          </div>
+
+          <!-- Single Widget Area -->
+
+          <!-- Single Widget Area -->
+
+
+        </div>
+
+        <!-- Shop Products Area -->
+        <div class="col-12 col-md-8 col-lg-9">
+          <div class="row">
+
+            <!-- Single Product Area -->
+            <div class="col-12 col-sm-6 col-lg-4">
+              <div class="single-product-area mb-50">
+                <!-- Product Thumbnail -->
+                <div class="product-thumbnail">
+                  <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG90YXRvfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="">
+                  <!-- Product Tags -->
+                  <span class="product-tags">Hot</span>
+                  <!-- Product Meta Data -->
+                  <div class="product-meta-data"><!-- Potato -->
+<a href="#" data-toggle="tooltip" class="add-to-cart" data-placement="top" data-name="Potato" data-price="25" title="Add To Cart" onclick="addToCart()"><i class="icon_cart_alt"></i></a>
+     </div>
+                </div>
+                <!-- Product Description -->
+                <div class="product-desc text-center pt-4">
+
+
+
+                  <a href="#" class="product-title">Potato</a>
+                  <h6 class="price">25</h6>
+                </div>
+              </div>
+            </div>
+
+            <!-- Single Product Area -->
+            <div class="col-12 col-sm-6 col-lg-4">
+              <div class="single-product-area mb-50">
+                <!-- Product Thumbnail -->
+                <div class="product-thumbnail">
+                  <img src="https://cdn.pixabay.com/photo/2020/03/09/09/09/okra-4915051_640.jpg">
+                 <div class="product-meta-data">
+<!-- Ladyfinger -->
+<a href="#" data-toggle="tooltip" class="add-to-cart" data-placement="top" data-name="Ladyfinger" data-price="30" title="Add To Cart" onclick="addToCart1()"><i class="icon_cart_alt"></i></a>
+        </div>
+
+                </div>
+                <!-- Product Description -->
+                <div class="product-desc text-center pt-4">
+                  <a href="#" class="product-title">ladyfinger</a>
+                  <h6 class="price">30</h6>
+                </div>
+              </div>
+            </div>
+
+            <!-- Single Product Area -->
+            <div class="col-12 col-sm-6 col-lg-4">
+              <div class="single-product-area mb-50">
+                <!-- Product Thumbnail -->
+                <div class="product-thumbnail">
+                  <img src="https://images8.alphacoders.com/738/thumbbig-738332.webp">
+                  <div class="product-meta-data">
+<!-- Tamato -->
+<a href="#" data-toggle="tooltip" class="add-to-cart" data-placement="top" data-name="Tomato" data-price="15" title="Add To Cart" onclick="addToCart2()"><i class="icon_cart_alt"></i></a>
+     </div>
+                </div>
+                <!-- Product Description -->
+                <div class="product-desc text-center pt-4">
+                  <a href="#" class="product-title">Tomato</a>
+                  <h6 class="price">15</h6>
+                </div>
+              </div>
+            </div>
+
+            <!-- Single Product Area -->
+            <div class="col-12 col-sm-6 col-lg-4">
+              <div class="single-product-area mb-50">
+                <!-- Product Thumbnail -->
+                <div class="product-thumbnail">
+                  <img src="https://images.unsplash.com/photo-1578283326173-fbb0f83b59b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c3BpbmFjaHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                  <!-- Product Tags -->
+                  <span class="product-tags bg-danger">Sale</span>
+                  <!-- Product Meta Data -->
+                  <div class="product-meta-data">
+
+<!-- Spinach -->
+<a href="#" data-toggle="tooltip" class="add-to-cart" data-placement="top" data-name="Spinach" data-price="40" title="Add To Cart" onclick="addToCart3()"><i class="icon_cart_alt"></i></a>
+      </div>
+                </div>
+                <!-- Product Description -->
+                <div class="product-desc text-center pt-4">
+                  <a href="#" class="product-title">Spinach</a>
+                  <h6 class="price">40</h6>
+                </div>
+              </div>
+            </div>
+
+            <!-- Single Product Area -->
+            <div class="col-12 col-sm-6 col-lg-4">
+              <div class="single-product-area mb-50">
+                <!-- Product Thumbnail -->
+                <div class="product-thumbnail">
+                  <img src="https://images.pexels.com/photos/14281758/pexels-photo-14281758.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+                  <!-- Product Meta Data -->
+                  <div class="product-meta-data">
+<!-- Cabbage -->
+<a href="#" data-toggle="tooltip" class="add-to-cart" data-placement="top" data-name="Cabbage" data-price="25" title="Add To Cart" onclick="addToCart4()"><i class="icon_cart_alt"></i></a>
+ </div>
+                </div>
+                <!-- Product Description -->
+                <div class="product-desc text-center pt-4">
+                  <a href="#" class="product-title">Cabbage</a>
+                  <h6 class="price">25</h6>
+                </div>
+              </div>
+            </div>
+
+            <!-- Single Product Area -->
+            <div class="col-12 col-sm-6 col-lg-4">
+              <div class="single-product-area mb-50">
+                <!-- Product Thumbnail -->
+                <div class="product-thumbnail">
+                  <img src="https://images.unsplash.com/photo-1510627498534-cf7e9002facc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2F1bGlmbG93ZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                  <!-- Product Meta Data -->
+                  <div class="product-meta-data">
+<!-- Cauliflower -->
+<a href="#" data-toggle="tooltip" class="add-to-cart" data-placement="top" data-name="Cauliflower" data-price="12" title="Add To Cart" onclick="addToCart5()"><i class="icon_cart_alt"></i></a>
+    </div>
+                </div>
+                <!-- Product Description -->
+
+                <div class="product-desc text-center pt-4">
+                  <a href="#" class="product-title">Cauliflower</a>
+                  <h6 class="price">12</h6>
+                </div>
+              </div>
+            </div>
+
+            <!-- Single Product Area -->
+            <div class="col-12 col-sm-6 col-lg-4">
+              <div class="single-product-area mb-50">
+                <!-- Product Thumbnail -->
+                <div class="product-thumbnail">
+                  <img src="https://images.pexels.com/photos/2329440/pexels-photo-2329440.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+                  <!-- Product Meta Data -->
+                  <div class="product-meta-data">
+<!-- Cucumber -->
+<a href="#" data-toggle="tooltip" class="add-to-cart" data-placement="top" data-name="Cucumber" data-price="22" title="Add To Cart" onclick="addToCart6()"><i class="icon_cart_alt"></i></a>
+ </div>
+                </div>
+                <!-- Product Description -->
+                <div class="product-desc text-center pt-4">
+                  <a href="#" class="product-title">Cucumber</a>
+                  <h6 class="price">22</h6>
+                </div>
+              </div>
+            </div>
+
+            <!-- Single Product Area -->
+            <div class="col-12 col-sm-6 col-lg-4">
+              <div class="single-product-area mb-50">
+                <!-- Product Thumbnail -->
+                <div class="product-thumbnail">
+                  <img src="https://img.freepik.com/free-photo/close-up-view-whole-red-onions-white-background_141793-5440.jpg?size=626&ext=jpg&ga=GA1.1.1210628482.1692876107&semt=sph" alt="">
+                  <!-- Product Tags -->
+                  <span class="product-tags">Hot</span>
+                  <!-- Product Meta Data -->
+                  <div class="product-meta-data">
+<!-- Onion -->
+<a href="#" data-toggle="tooltip" class="add-to-cart" data-placement="top" data-name="Onion" data-price="25" title="Add To Cart" onclick="addToCart7()"><i class="icon_cart_alt"></i></a>
+          </div>
+                </div>
+
+                <!-- Product Description -->
+                <div class="product-desc text-center pt-4">
+                  <a href="#" class="product-title">Onion</a>
+                  <h6 class="price">25</h6>
+                </div>
+              </div>
+            </div>
+
+            <!-- Single Product Area -->
+            <div class="col-12 col-sm-6 col-lg-4">
+              <div class="single-product-area mb-50">
+                <!-- Product Thumbnail -->
+                <div class="product-thumbnail">
+                  <img src="https://images.pexels.com/photos/3004798/pexels-photo-3004798.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+                  <!-- Product Meta Data -->
+                  <div class="product-meta-data">
+<!-- Green Beans -->
+<a href="#" data-toggle="tooltip" class="add-to-cart" data-placement="top" data-name="Green Beans" data-price="18" title="Add To Cart" onclick="addToCart8()"><i class="icon_cart_alt"></i></a>    </div>
+                </div>
+                <!-- Product Description -->
+                <div class="product-desc text-center pt-4">
+                  <a href="#" class="product-title">Green Beans</a>
+                  <h6 class="price">18</h6>
+                </div>
+              </div>
+            </div>
+
+            <!-- Single Product Area -->
+
+
+          </div>
+
+          <!-- Pagination -->
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- ##### Shop Area End ##### -->
+<div class="col-6 col-sm-4 col-lg-2" style="margin-left:20px">
+   <div class="single-widget-area">
+            <!-- Title -->
+            <h5 class="widget-title">Tags</h5>
+            <!-- Tags -->
+            <ul class="famie-tags">
+              <li><a href="#">All product</a></li>
+              <li><a href="#">Freshy Fruit</a></li>
+              <li><a href="#">Wheat</a></li>
+              <li><a href="#">Rice</a></li>
+              <li><a href="#">Organic</a></li>
+              <li><a href="#">Vegetables</a></li>
+            </ul>
+          </div>
+</div>
+  <!-- ##### Footer Area Start ##### -->
+   <footer class="footer-area">
+    <!-- Main Footer Area -->
+    <div class="main-footer bg-img bg-overlay section-padding-100-0" style="background-image: url('{% static "img/bg-img/3.jpg" %}');">
+      <div class="container">
+        <div class="row">
+
+          <!-- Single Footer Widget Area -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="footer-widget mb-80">
+              <a href="#" class="foo-logo d-block mb-30"><img src="img/core-img/logo2.png" alt=""></a>
+              <p style="font-weight:bold; font-size:15px">Feel free to reach out to us for any inquiries, advice, or collaborations. We value your feedback and look forward to connecting with fellow farmers and agri-enthusiasts.</p>
+              <div class="contact-info">
+                <p style="font-weight:bold; font-size:15px"><i class="fa fa-map-pin" aria-hidden="true"></i><span>Noida</span></p>
+                <p style="font-weight:bold; font-size:15px"><i class="fa fa-envelope" aria-hidden="true"></i><span>agrovillage2024@gmail.com</span></p>
+                <p style="font-weight:bold; font-size:15px"><i class="fa fa-phone" aria-hidden="true"></i><span>+91xxxxxxxxxx</span></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Single Footer Widget Area -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="footer-widget mb-80">
+              <h5 class="widget-title" style="font-weight:bold; font-size:15px">QUICK LINK</h5>
+              <!-- Footer Widget Nav -->
+              <nav class="footer-widget-nav">
+                <ul >
+                  <li ><a href="#" style="font-weight:bold; font-size:15px">Purchase</a></li>
+                  <li ><a href="#" style="font-weight:bold; font-size:15px">Shipping</a></li>
+                  <li ><a href="#" style="font-weight:bold; font-size:15px">Payments</a></li>
+                  <li ><a href="#" style="font-weight:bold; font-size:15px">News</a></li>
+                  <li ><a href="#" style="font-weight:bold; font-size:15px">Brands</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <!-- Single Footer Widget Area -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="footer-widget mb-80">
+              <h5 class="widget-title" style="font-weight:bold; font-size:15px;">RECENT NEWS</h5>
+
+              <!-- Single Recent News Start -->
+              <div class="single-recent-blog d-flex align-items-center">
+                <div class="post-thumbnail">
+                   <img src="{% static 'img/bg-img/4.jpg' %}" alt="">
+                </div>
+                <div class="post-content">
+                  <p style="font-weight:bold; font-size:15px;">The current critical issues that plague Indian agriculture are the
+                    knowledge and infrastructure deficits, especially in rural areas.</p>
+                  <div class="post-date">27 Aug 2023</div>
+                </div>
+              </div>
+
+             <!-- Single Recent News Start -->
+              <div class="single-recent-blog d-flex align-items-center">
+                <div class="post-thumbnail">
+                  <img src="{% static 'img/core-img/tomato.webp' %}" alt="">
+                </div>
+                <div class="post-content">
+                  <a href="#" class="post-title" style="font-weight:bold; font-size:15px;">Tomato prices hit a record</a>
+                  <div class="post-date" >08 Aug 2023</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Single Footer Widget Area -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="footer-widget mb-80">
+              <h5 class="widget-title" style="font-weight:bold; font-size:15px;">STAY CONNECTED</h5>
+              <!-- Footer Social Info -->
+              <div class="footer-social-info">
+                <a href="https://www.facebook.com/profile.php?id=61551079418806">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+        <span style="font-weight:bold; font-size:15px;">Facebook</span>
+    </a>
+               <a href="https://instagram.com/coding_master_21?igshid=MzRlODBiNWFlZA==">
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+        <span style="font-weight:bold; font-size:15px;">Instagram</span>
+    </a>
+                <a href="https://www.linkedin.com/in/kumkum-singh-0a408a1b13">
+        <i class="fa fa-linkedin" aria-hidden="true"></i>
+        <span style="font-weight:bold; font-size:15px;">Linkedin</span>
+    </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Copywrite Area  -->
+    <div class="copywrite-area">
+      <div class="container">
+        <div class="copywrite-text">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <p style="font-weight:bold; font-size:15px;"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;agrovillage <i class="fa fa-heart-o" ></i><a href="https://colorlib.com" target="_blank"></a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ##### Footer Area End ##### -->
+
+  <!-- ##### All Javascript Files ##### -->
+  <!-- jquery 2.2.4  -->
+ <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/classynav.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/wow.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.sticky.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.scrollup.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jarallax.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jarallax-video.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/active.js' %}"></script>
+</body>
+<script>
+  // Cart data structure (in-memory storage, you might use local storage or a backend for persistence)
+  let cart = [];
+
+  // Event listener for Add to Cart button
+  document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', function() {
+      const id = this.dataset.id;
+      const name = this.dataset.name;
+      const price = parseFloat(this.dataset.price);
+
+      // Check if item is already in cart
+      const existingItem = cart.find(item => item.id === id);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({ id, name, price, quantity: 1 });
+      }
+
+      // Update cart icon
+      const cartQuantityElement = document.getElementById('cart-quantity');
+      const totalQuantity = cart.reduce((acc, item) => acc + item.quantity, 0);
+      cartQuantityElement.textContent = totalQuantity;
+    });
+  });
+   function addToCart() {
+        // Add a Potato to the cart
+        cart.push({ name: 'Potato', quantity: 1, price: 25 });
+
+        // Save the updated cart to Local Storage
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+  function addToCart1() {
+        // Add a Potato to the cart
+        cart.push({ name: 'ladyfinger', quantity: 1, price: 30});
+
+        // Save the updated cart to Local Storage
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+  function addToCart2() {
+        // Add a Potato to the cart
+        cart.push({ name: 'Tomato', quantity: 1, price: 15 });
+
+        // Save the updated cart to Local Storage
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+  function addToCart3() {
+        // Add a Potato to the cart
+        cart.push({ name: 'Spinach', quantity: 1, price: 40});
+
+        // Save the updated cart to Local Storage
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+  function addToCart4() {
+        // Add a Potato to the cart
+        cart.push({ name: 'Cabbage', quantity: 1, price: 25 });
+
+        // Save the updated cart to Local Storage
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+  function addToCart5() {
+        // Add a Potato to the cart
+        cart.push({ name: 'Cauliflower', quantity: 1, price: 12 });
+
+        // Save the updated cart to Local Storage
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+  function addToCart6() {
+        // Add a Potato to the cart
+        cart.push({ name: 'Cucumber', quantity: 1, price: 22 });
+
+        // Save the updated cart to Local Storage
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+  function addToCart7() {
+        // Add a Potato to the cart
+        cart.push({ name: 'Onion', quantity: 1, price: 25 });
+
+        // Save the updated cart to Local Storage
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+  function addToCart8() {
+        // Add a Potato to the cart
+        cart.push({ name: 'Green Beans', quantity: 1, price: 25 });
+
+        // Save the updated cart to Local Storage
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+</script>
+</html>

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <!-- Title -->
+  <title>agrovillage</title>
+  <!-- Favicon -->
+  <link rel="icon" href="static/img/core-img/favicon.ico">
+  <!-- Core Stylesheet -->
+   {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div class="preloader d-flex align-items-center justify-content-center">
+    <div class="spinner"></div>
+  </div>
+<!-- header start-->
+  <header class="header-area">
+    <!-- Top Header Area -->
+    <div class="top-header-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="top-header-content d-flex align-items-center justify-content-between">
+              <!-- Top Header Content -->
+              <div class="top-header-meta">
+                <p>Welcome to <span>AgroVillage</span>, we hope you will enjoy our products and have good experience</p>
+              </div>
+              <!-- Top Header Content -->
+              <div class="top-header-meta text-right">
+                <a href="#" data-toggle="tooltip" data-placement="bottom" title="agrovillage2024@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: agrovillage2024@gmail.com</span></a>
+                <a href="#" data-toggle="tooltip" data-placement="bottom" title="9870672129"><i class="fa fa-phone" aria-hidden="true"></i> <span>Call Us:4444444</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar Area -->
+    <div class="famie-main-menu" >
+      <div class="classy-nav-container breakpoint-off">
+        <div class="container-fluid" >
+          <!-- Menu -->
+          <nav class="classy-navbar justify-content-between" id="famieNav" >
+
+            <!-- Nav Brand -->
+            <a href="{% url 'admin:login' %}?next=/admin/" class="nav-brand" style="font-size:30px; color:green;font-weight:bold;">Agro<span class="sub-color" style="color:orange">Village</span></a>
+
+            <!-- Navbar Toggler -->
+
+            <div class="classy-navbar-toggler">
+              <span class="navbarToggler"><span></span><span></span><span></span></span>
+            </div>
+            <!-- Menu -->
+            <div class="classy-menu">
+              <!-- Close Button -->
+              <div class="classycloseIcon">
+                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+              </div>
+              <!-- Navbar Start -->
+              <div class="classynav">
+                <ul>
+                  <li class="active"><a href="{% url 'index' %}" style="font-size:25px; color:green">Home</a></li>
+                  <li><a href="{% url 'about' %}" style="font-size:25px; color:green">About</a></li>
+                    <li id="poo"><a href='#' style="font-size:25px; color:green" >Services</a>
+
+                      </li>
+
+                          <li><a href="{% url 'news' %}" style="font-size:25px; color:green">News</a></li>
+
+                      <li><a href="{% url 'contact' %}" style="font-size:25px; color:green">Contact</a></li>
+                   <li><a href="{% url 'login' %}" style="font-size:25px;  color:green">Login</a></li>
+                    </ul>
+
+                <!-- Search Icon -->
+                <div id="searchIcon">
+                  <i class="icon_search" aria-hidden="true"></i>
+                </div>
+                <!-- Cart Icon -->
+               <div id="cartIcon">
+  <a href="{% url 'cart_page' %}">
+    <i class="icon_cart_alt" aria-hidden="true"></i>
+    <span id="cart-quantity">0</span>
+  </a>
+</div>
+
+              </div>
+
+              <!-- Navbar End -->
+            </div>
+            <div id="google_translate_element"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+          <a href="{% url 'weather' %}"><img src="{% static 'img/core-img/wicon.jpg' %}" height="25px" width="40px">weather</a>
+          </nav>
+
+          <!-- Search Form -->
+          <div class="search-form">
+            <form action="#" method="get">
+              <input type="search" name="search" id="search" placeholder="Type keywords &amp; press enter...">
+              <button type="submit" class="d-none"></button>
+            </form>
+            <!-- Close Icon -->
+            <div class="closeIcon"><i class="fa fa-times" aria-hidden="true"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ##### Header Area End ##### -->
+
+  <!-- ##### Breadcrumb Area Start ##### -->
+ <div class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url('{% static 'img/bg-img/pic10.jpg' %}');">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-12">
+          <div class="breadcrumb-text">
+            <h2>News</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="famie-breadcrumb">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'index' %}"><i class="fa fa-home"></i> Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">News</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <!-- ##### Breadcrumb Area End ##### -->
+
+  <!-- ##### Blog Area Start ##### -->
+  <section class="famie-blog-area">
+    <div class="container">
+      <div class="row">
+        <!-- Posts Area -->
+        <div class="col-12 col-md-8">
+          <div class="posts-area">
+
+            <!-- Single Blog Post Area -->
+            <div class="single-blog-post-area mb-50 wow fadeInUp" data-wow-delay="100ms">
+              <h6>Post on <a href="#" class="post-date">25 Aug 2023</a> / <a href="#" class="post-author">The Economic Times</a></h6>
+              <a href="#" class="post-title">Rice Output may Fall by 5% due to uneven rains</a>
+              <img src="{% static 'img/core-img/ricen.jpg' %}" alt="" class="post-thumb">
+              <p class="post-excerpt">
+              India's rice output is projected to decline by 5% due to uneven rains in key rice-producing states like
+                West Bengal, Odisha, Jharkhand, Chhattisgarh, eastern Uttar Pradesh, and Bihar.
+                The ICAR-National Rice Research Institute has suggested that farmers in these states opt for short-duration
+                rice crops to mitigate the impact of the erratic monsoon. The deficient rainfall has affected the sowing and growth of paddy
+                crops, raising concerns about rice production. Additionally, global rice prices are expected to rise due to an estimated
+                7 million-tonne deficit in global rice production in FY24, driven by El Nino and unfavorable weather conditions.</p>
+                 <a href="https://timesofindia.indiatimes.com/city/nashik/animal-husbandry-department-seeks-1-3-crore-to-grow-fodder/articleshow/103098126.cms" class="btn famie-btn mt-30">Read More</a>
+            </div>
+
+            <!-- Single Blog Post Area -->
+            <div class="single-blog-post-area mb-50 wow fadeInUp" data-wow-delay="300ms">
+              <h6>Post on <a href="#" class="post-date">13 September,2023</a> / <a href="#" class="post-author">Krishi Jagaran</a></h6>
+              <a href="#" class="post-title">For Trade in Agriculture and Animal Husbandry Products, India and Brazil to Form Joint Technical Committees</a>
+               <img src="{% static 'img/core-img/modi.webp' %}" alt="" class="post-thumb">
+              <p class="post-excerpt">
+               After handing over the G20 presidency to Brazil's President Luiz, Prime Minister Narendra Modi signed multiple deals with him, including Joint Technical Committees to facilitate trade in agriculture and animal husbandry products.
+              Highlighting their roles as major global food producers, the leaders reaffirmed their resolve to increase cooperation in sustainable agriculture and rural development, including at the multilateral level,
+                with the aim of safeguarding the food and nutritional security of both countries and of the world.</p>
+                 <a href="https://krishijagran.com/agriculture-world/for-trade-in-agriculture-and-animal-husbandry-products-india-and-brazil-to-form-joint-technical-committees/" class="btn famie-btn mt-30">Read More</a>
+            </div>
+
+            <!-- Single Blog Post Area -->
+            <div class="single-blog-post-area mb-50 wow fadeInUp" data-wow-delay="500ms">
+              <h6>Post on <a href="#" class="post-date">28 Aug 2023</a> / <a href="#" class="post-author">Renu Bisht</a></h6>
+              <a href="#" class="post-title">Export duty on onions: Union Minister Bharti Pawar says prices will not crash.</a>
+              <img src="{% static 'img/bg-img/pic16.avif' %}" alt="" class="post-thumb">
+              <p class="post-excerpt">
+                Amid a protest by farmers and traders against the imposition of 40 per cent export duty on onions by the Centre, Union Minister Bharti Pawar on Monday said prices of the kitchen staple will not crash.
+              </p>
+              <a href="https://www.livemint.com/industry/agriculture/export-duty-on-onions-union-minister-bharti-pawar-says-prices-will-not-crash-11692636676904.html" class="btn famie-btn mt-30">Read More</a>
+            </div>
+
+            <!-- Single Blog Post Area -->
+            <div class="single-blog-post-area mb-50 wow fadeInUp" data-wow-delay="700ms">
+              <h6>Post on <a href="#" class="post-date">28 Aug 2023</a> / <a href="#" class="post-author">Renu Bisht</a></h6>
+              <a href="#" class="post-title">100 Haryana Farmers Heading For Chandigarh Protest Taken In Police Custody.</a>
+            <img src="{% static 'img/bg-img/pic17.avif' %}" alt="" class="post-thumb">
+              <p class="post-excerpt">
+                Ambala: Around 100 farmers from Haryana were taken into custody on Tuesday as they marched towards Chandigarh for a demonstration to seek compensation for losses caused by floods, the police said.
+              </p>
+              <a href="https://www.ndtv.com/india-news/100-haryana-farmers-heading-for-chandigarh-protest-seeking-compensation-for-floods-taken-in-police-custody-4320705" class="btn famie-btn mt-30">Read More</a>
+            </div>
+
+          </div>
+
+          <!-- pagination -->
+          <nav>
+            <ul class="pagination wow fadeInUp" data-wow-delay="900ms">
+              <li class="page-item active"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right"></i></a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Sidebar Area -->
+        <div class="col-12 col-md-4">
+          <div class="sidebar-area">
+
+            <!-- Single Widget Area -->
+            <div class="single-widget-area">
+              <form action="#" method="post" class="search-widget-form">
+                <input type="search" class="form-control" placeholder="Search">
+                <button type="submit"><i class="icon_search" aria-hidden="true"></i></button>
+              </form>
+            </div>
+
+            <!-- Single Widget Area -->
+            <div class="single-widget-area">
+              <!-- Title -->
+              <h5 class="widget-title">Catagories</h5>
+              <!-- Cata List -->
+              <ul class="cata-list">
+                <li><a href="https://www.insightsonindia.com/agriculture/role-of-agriculture-in-indian-economy/government-initiatives-policies-and-measures/">Government Policies and Support</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Water_resources">Water Management</a></li>
+                <li><a href="https://www.cropin.com/blogs/sustainable-agricultural-practices-vs-organic-practices">Organic and Sustainable farming</a></li>
+                <li><a href="https://www.growpittsburgh.org/garden-and-farm-resources/info-hub/pest-disease-management/">Pest and Disease Management</a></li>
+                <li><a href="https://byjus.com/commerce/agricultural-marketing/">Market Access and Marketing Strategies</a></li>
+                <li><a href="https://cropaia.com/blog/soil-fertility-and-how-to-manage-it/">How to Manage Soil Fertility</a></li>
+              </ul>
+            </div>
+
+            <!-- Single Widget Area -->
+            <div class="single-widget-area">
+              <!-- Title -->
+              <h5 class="widget-title">Recent News</h5>
+
+              <!-- Single Recent News Start -->
+              <div class="single-recent-blog style-2 d-flex align-items-center">
+                <div class="post-thumbnail">
+                  <img src="{% static 'img/bg-img/pic19.webp' %}" alt="" class="post-thumb">
+                </div>
+                <div class="post-content">
+                  <a href="https://www.livemint.com/industry/agriculture/govt-allocates-additional-2-lakh-tn-sugar-in-domestic-quota-for-aug-11692708457398.html" class="post-title">Govt allocates additional 2 lakh tonne sugar in domestic quota for Aug</a>
+                  <div class="post-date">27 Aug 2023</div>
+                </div>
+              </div>
+
+              <!-- Single Recent News Start -->
+              <div class="single-recent-blog style-2 d-flex align-items-center">
+                <div class="post-thumbnail">
+                 <img src="{% static 'img/bg-img/pic20.webp' %}" alt="" class="post-thumb">
+                </div>
+                <div class="post-content">
+                  <a href="https://www.livemint.com/industry/agriculture/after-tomato-govt-to-sell-onion-at-subsidised-rate-of-rs-25-a-kg-from-monday-11692532182768.html" class="post-title">After tomato, Government to sell onion at subsidised rate of ₹25 a kg from tomorrow</a>
+                  <div class="post-date">27 Aug 2023</div>
+                </div>
+              </div>
+
+              <!-- Single Recent News Start -->
+              <div class="single-recent-blog style-2 d-flex align-items-center">
+                <div class="post-thumbnail">
+                 <img src="{% static 'img/bg-img/pic21.jpg' %}" alt="" class="post-thumb">
+                </div>
+                <div class="post-content">
+                  <a href="https://indianexpress.com/article/cities/mumbai/despite-schemes-financial-assistance-maharashtra-farmers-not-happy-8694593/" class="post-title">Despite schemes, financial assistance, Maharashtra farmers are not happy, here’s why?</a>
+                  <div class="post-date">26 Aug 2023</div>
+                </div>
+              </div>
+
+              <!-- Single Recent News Start -->
+              <div class="single-recent-blog style-2 d-flex align-items-center">
+                <div class="post-thumbnail">
+                  <img src="{% static 'img/bg-img/pic22.webp' %}" alt="" class="post-thumb">
+                </div>
+                <div class="post-content">
+                  <a href="https://www.thehindubusinessline.com/economy/agri-business/scrap-livestock-import-and-export-bill-says-animals-protection-body/article66990481.ece" class="post-title">Scrap Livestock Import and Export Bill, says animals protection body.</a>
+                  <div class="post-date">28 Aug 2023</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Single Widget Area -->
+            <div class="single-widget-area">
+              <!-- Title -->
+              <h5 class="widget-title">Tags</h5>
+              <!-- Tags -->
+              <ul class="famie-tags">
+                <li><a href="#">All product</a></li>
+                <li><a href="#">Freshy Fruit</a></li>
+                <li><a href="#">Organic</a></li>
+                <li><a href="#">Farm Practices</a></li>
+              </ul>
+            </div>
+
+            <!-- Single Widget Area -->
+            <div class="single-widget-area">
+              <!-- Title -->
+              <h5 class="widget-title">Best products</h5>
+
+              <!-- Single Best Products -->
+              <div class="single-best-product d-flex align-items-center">
+                <!-- Product Thumbnail -->
+                <div class="product-thumbnail">
+                  <a href="#"><img src="{% static 'img/bg-img/pic23.webp' %}" alt="" class="post-thumb">
+                </div>
+                <!-- Product Info -->
+                <div class="product-info">
+                  <a href="#" class="pro-name">pure ghee</a>
+                  <h6>950Rs.</h6>
+                  <div class="product-rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Single Best Products -->
+              <div class="single-best-product d-flex align-items-center">
+                <!-- Product Thumbnail -->
+                <div class="product-thumbnail">
+                  <a href="#"><img src="{% static 'img/bg-img/pic24.jpeg' %}" alt="" class="post-thumb">
+                </div>
+                <!-- Product Info -->
+                <div class="product-info">
+                  <a href="#" class="pro-name">fresh vegetables</a>
+                  <h6>35Rs.</h6>
+                  <div class="product-rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+
+               <!-- Single Best Products -->
+              <div class="single-best-product d-flex align-items-center">
+                <!-- Product Thumbnail -->
+                <div class="product-thumbnail">
+                  <a href="#"><img src="{% static 'img/bg-img/pic26.WEBP' %}" alt="" class="post-thumb">
+                </div>
+                <!-- Product Info -->
+                <div class="product-info">
+                  <a href="#" class="pro-name">Wheat & Rice</a>
+                  <h6>40Rs.</h6>
+                  <div class="product-rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Single Best Products -->
+              <div class="single-best-product d-flex align-items-center">
+                <!-- Product Thumbnail -->
+                <div class="product-thumbnail">
+                  <a href="#"><img src="{% static 'img/bg-img/pic25.jpg' %}" alt="" class="post-thumb">
+                </div>
+                <!-- Product Info -->
+                <div class="product-info">
+                  <a href="#" class="pro-name">pulses</a>
+                  <h6>80Rs.</h6>
+                  <div class="product-rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ##### Blog Area End ##### -->
+<div class="contact-maps mb-100">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/EE8y3ASJRsQ?si=g7wBCV3lGu9Jw-vF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+  <!-- ##### Footer Area Start ##### -->
+  <footer class="footer-area">
+    <!-- Main Footer Area -->
+    <div class="main-footer bg-img bg-overlay section-padding-100-0" style="background-image: url('{% static "img/bg-img/3.jpg" %}');">
+      <div class="container">
+        <div class="row">
+
+          <!-- Single Footer Widget Area -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="footer-widget mb-80">
+              <a href="#" class="foo-logo d-block mb-30"><img src="img/core-img/logo2.png" alt=""></a>
+              <p style="font-weight:bold; font-size:15px">Feel free to reach out to us for any inquiries, advice, or collaborations. We value your feedback and look forward to connecting with fellow farmers and agri-enthusiasts.</p>
+              <div class="contact-info">
+                <p style="font-weight:bold; font-size:15px"><i class="fa fa-map-pin" aria-hidden="true"></i><span>Noida</span></p>
+                <p style="font-weight:bold; font-size:15px"><i class="fa fa-envelope" aria-hidden="true"></i><span>agrovillage2024@gmail.com</span></p>
+                <p style="font-weight:bold; font-size:15px"><i class="fa fa-phone" aria-hidden="true"></i><span>+91xxxxxxxxxx</span></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Single Footer Widget Area -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="footer-widget mb-80">
+              <h5 class="widget-title" style="font-weight:bold; font-size:15px">QUICK LINK</h5>
+              <!-- Footer Widget Nav -->
+              <nav class="footer-widget-nav">
+                <ul >
+                  <li ><a href="#" style="font-weight:bold; font-size:15px">Purchase</a></li>
+                  <li ><a href="#" style="font-weight:bold; font-size:15px">Shipping</a></li>
+                  <li ><a href="#" style="font-weight:bold; font-size:15px">Payments</a></li>
+                  <li ><a href="#" style="font-weight:bold; font-size:15px">News</a></li>
+                  <li ><a href="#" style="font-weight:bold; font-size:15px">Brands</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <!-- Single Footer Widget Area -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="footer-widget mb-80">
+              <h5 class="widget-title" style="font-weight:bold; font-size:15px;">RECENT NEWS</h5>
+
+              <!-- Single Recent News Start -->
+              <div class="single-recent-blog d-flex align-items-center">
+                <div class="post-thumbnail">
+                   <img src="{% static 'img/bg-img/4.jpg' %}" alt="">
+                </div>
+                <div class="post-content">
+                  <p style="font-weight:bold; font-size:15px;">The current critical issues that plague Indian agriculture are the
+                    knowledge and infrastructure deficits, especially in rural areas.</p>
+                  <div class="post-date">27 Aug 2023</div>
+                </div>
+              </div>
+
+             <!-- Single Recent News Start -->
+              <div class="single-recent-blog d-flex align-items-center">
+                <div class="post-thumbnail">
+                  <img src="{% static 'img/core-img/tomato.webp' %}" alt="">
+                </div>
+                <div class="post-content">
+                  <a href="#" class="post-title" style="font-weight:bold; font-size:15px;">Tomato prices hit a record</a>
+                  <div class="post-date" >08 Aug 2023</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Single Footer Widget Area -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="footer-widget mb-80">
+              <h5 class="widget-title" style="font-weight:bold; font-size:15px;">STAY CONNECTED</h5>
+              <!-- Footer Social Info -->
+              <div class="footer-social-info">
+                <a href="https://www.facebook.com/profile.php?id=61551079418806">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+        <span style="font-weight:bold; font-size:15px;">Facebook</span>
+    </a>
+               <a href="https://instagram.com/coding_master_21?igshid=MzRlODBiNWFlZA==">
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+        <span style="font-weight:bold; font-size:15px;">Instagram</span>
+    </a>
+                <a href="https://www.linkedin.com/in/kumkum-singh-0a408a1b13">
+        <i class="fa fa-linkedin" aria-hidden="true"></i>
+        <span style="font-weight:bold; font-size:15px;">Linkedin</span>
+    </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Copywrite Area  -->
+    <div class="copywrite-area">
+      <div class="container">
+        <div class="copywrite-text">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <p style="font-weight:bold; font-size:15px;"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;agrovillage <i class="fa fa-heart-o" ></i><a href="https://colorlib.com" target="_blank"></a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ##### Footer Area End ##### -->
+
+
+  <!-- ##### All Javascript Files ##### -->
+  <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/classynav.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/wow.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.sticky.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.scrollup.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jarallax.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jarallax-video.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/active.js' %}"></script>
+<script>
+  document.getElementById('poo').addEventListener('click', function () {
+    alert('When you want to access services, please sign up first...');
+    window.location.href = '/login/';
+});
+
+</script>
+</body>
+
+</html>
